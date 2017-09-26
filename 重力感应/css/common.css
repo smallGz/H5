@@ -1,0 +1,56 @@
+/* CSS Document */
+body { margin:auto; width:640px; height:100%; overflow:hidden; background:#000; overflow:hidden;}
+
+
+body { width:640px; max-width:640px; min-width:640px; margin:0 auto; background:#000; overflow:hidden;}
+section { position:absolute;  height:100%; width:640px; margin:0 auto;  overflow:hidden;}
+
+
+#loader { background:#000000;}
+#loader #loader_movie { position:absolute; width:640px; height:700px; top:50%; margin-top:-350px;}
+#loader #loading { position:absolute; width:640px; height:800px; top:50%; margin-top:-400px; display:none;}
+
+#index { display:none;}
+#index #door_left { position:absolute; width:324px; height:100%; left:0px; bottom:0px; overflow:hidden;}
+#index #door_right { position:absolute; width:324px; height:100%; right:0px; bottom:0px; overflow:hidden;}
+#index .door_pic { position:absolute; width:100%; height:100%;}
+#index .door_pic img { position:absolute; bottom:0px; left:0px;}
+#index #door_text { position:absolute; width:80%; left:20%; height:85%; bottom:3%;}
+#index #door_text img { height:100%:}
+#index #shake_tip { position:absolute; width:160px; right:40px; height:160px;  bottom:40px;;}
+#index #shake_tip img { height:100%:}
+#index  #shake { position:absolute; width:160px; right:40px; height:160px;  bottom:40px;}
+#index  #shake img { height:100%;
+	-webkit-transform-origin:95% 70%;
+	-webkit-animation-name:'shake_move';
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear; 
+    -webkit-animation-delay: 0s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: normal;
+}
+
+
+#result { display:none; background:#000000;}
+#result .result_pic { display:none;}
+#result #btn_retry { position:absolute; width:180px; height:60px; left:50px; top:920px; }
+#result .result_frame { position:absolute; width:100%; height:600px; top:250px; text-align:center;}
+#result #result_canvas { position:absolute; left:0px; top:0px;}
+#result #result_btn { position:absolute; width:600px; left:20px; height:80px; bottom:12px;}
+#result #result_btn #btn_share { position:absolute; width:300px; left:0px; height:80px; text-align:center;}
+#result #result_btn #btn_app { position:absolute; width:300px; right:0px; height:80px; text-align:center;}
+#result #result_btn #btn_friend { position:absolute; width:300px; left:0px; height:80px; text-align:center; display:none;}
+#result #result_btn #btn_timeline { position:absolute; width:300px; right:0px; height:80px; text-align:center; display:none;}
+
+#share { display:none;}
+#share .pop_mask { position:absolute; width:100%; height:100%; background:#000000; opacity:0.8;}
+#share #share_canvas { position:absolute; width:450px; height:700px; top:0px; right:0px;}
+
+
+@-webkit-keyframes 'shake_move' {
+     0% { -webkit-transform:rotate(0deg):}
+	 25% { -webkit-transform:rotate(-3deg);}
+     50% { -webkit-transform:rotate(0deg):}
+	 75% { -webkit-transform:rotate(3deg);}
+	 100% { -webkit-transform:rotate(0deg);}
+}

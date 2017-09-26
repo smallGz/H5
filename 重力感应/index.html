@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta name="format-detection" content="telephone=no"/>
+<meta name="x5-orientation" content="portrait">
+<script type="text/javascript">
+var phoneWidth = parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+	var version = parseFloat(RegExp.$1);
+	// andriod 2.3
+	if(version>2.3){
+		document.write('<meta name="viewport" content="width=640, initial-scale='+phoneScale+',minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+		// andriod 2.3以上
+	}else{
+		document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+	}
+// 其他系统
+} else {
+	document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+
+<link href="http://3gimg.qq.com/mig-web/2015/market/151231-newyear/common_2299a01.css" rel="stylesheet" type="text/css">
+<script language="javascript" src="http://3gimg.qq.com/mig-web/2015/market/151231-newyear/js/jquery_3576a6e.js"></script>
+<script src="http://3gimg.qq.com/mig-web/2015/market/151231-newyear/js/debug_bca073e.js"></script>
+
+<script language="javascript">
+
+	var shareParam = {
+		title: '2016，求个明星门神守护你',
+		desc: '2016，求个明星门神守护你',
+		link: window.location.href,
+		'logo':'http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/share_a0de6a7.jpg'
+	};
+
+
+	$.get("http://mktaq.qq.com/weixin/signature.s?mpid=tcloud&url=" + encodeURIComponent(window.location.href),function(d){
+		wx.config({
+			appId: 'wxdd224fb03d4c610d',
+			timestamp: d.data.timestamp,
+			nonceStr: d.data.noncestr,
+			signature: d.data.signature,
+			jsApiList: [
+				'checkJsApi',
+				'onMenuShareTimeline',
+				'onMenuShareAppMessage'
+			]
+
+		});
+
+		var shareParam = {
+			title: '2016，求个明星门神守护你',
+			desc: '2016，求个明星门神守护你',
+			link: window.location.href,
+			'logo':'http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/share_a0de6a7.jpg'
+		};
+		wx.ready(function () {
+			iniShare(shareParam);
+		});
+		
+		iniShare(shareParam);
+
+		wx.error(function (res) {});
+	});
+	
+	function setShare(resultID){
+		var shareTitle='2016，求个明星门神守护你';
+		var shareDesc='2016，求个明星门神守护你';
+		
+		if (resultID==8){
+			shareDesc="心情灿烂！我的明星守护门神是：朕爽";
+		}
+		if (resultID==7){
+			shareDesc="升职加薪！我的明星守护门神是：李加薪";
+		}
+		if (resultID==2){
+			shareDesc="身体健康！我的明星守护门神是：菜康永";
+		}
+		if (resultID==3){
+			shareDesc="股市长红！我的明星守护门神是：股天乐";
+		}
+		if (resultID==5){
+			shareDesc="姨妈不痛！我的明星守护门神是：无姨烦";
+		}
+		if (resultID==1){
+			shareDesc="今年必嫁！我的明星守护门神是：俺嫁啦北鼻";
+		}
+		if (resultID==6){
+			shareDesc="钱多任花！我的明星守护门神是：易笑醒";
+		}
+		if (resultID==4){
+			shareDesc="隐私不泄！我的明星守护门神是：王阻拦";
+		}
+		shareParam = {
+			title: shareTitle,
+			desc: shareDesc,
+			link: window.location.href,
+			'logo':'http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/share_a0de6a7.jpg'
+		};
+		iniShare(shareParam);
+	}
+	
+
+	function iniShare(data){
+		var shareData = {
+			title: data.title,
+			desc: data.desc,
+			link: data.link,
+			imgUrl: data.logo,
+			trigger: function (res) {},
+			success: function (res) {pgvSendClick({hottag:'MOBILE.ACTIVITY.NEWYEAR.SHARE'});},
+			cancel: function (res) {},
+			fail: function (res) {}
+		};
+
+		wx.onMenuShareAppMessage(shareData);
+		shareData = {
+			title:  data.desc,
+			link: data.link,
+			imgUrl: data.logo,
+			trigger: function (res) {},
+			success: function (res) {pgvSendClick({hottag:'MOBILE.ACTIVITY.NEWYEAR.SHARE'});},
+			cancel: function (res) {},
+			fail: function (res) {}
+		};
+
+		wx.onMenuShareTimeline(shareData);
+
+	}
+	
+	
+
+
+var debug = false;
+
+var pre_resource = [
+	{"name":"loading","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/loading_df823d3.gif"},
+	{"name":"lion","type":"audio","url":"http://softfile.3g.qq.com/myapp/mig_web_media/151231-newyear/lion.mp3"}
+];
+
+var page_resource = [
+	{"name":"door_left","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/door_left_9736742.png"},
+	{"name":"door_right","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/door_right_6856613.png"},
+	{"name":"door_text","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/door_text_ab54c2e.png"},
+	{"name":"shake_tip","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/shake_tip_0e55b81.png"},
+	{"name":"result_1_body_0","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_1_body_0_b9a1360.png"},
+	{"name":"result_1_body_1","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_1_body_1_bf452ca.png"},
+	{"name":"result_1_body_2","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_1_body_2_656f919.png"},
+	{"name":"result_1_body_3","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_1_body_3_61d2919.png"},
+	{"name":"result_2_body_0","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_2_body_0_da86434.png"},
+	{"name":"result_2_body_1","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_2_body_1_e847119.png"},
+	{"name":"result_2_body_2","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_2_body_2_af765c1.png"},
+	{"name":"result_2_body_3","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_2_body_3_4819727.png"},
+	{"name":"result_3_body_0","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_3_body_0_0f6223a.png"},
+	{"name":"result_3_body_1","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_3_body_1_216303c.png"},
+	{"name":"result_3_body_2","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_3_body_2_66bc561.png"},
+	{"name":"result_3_body_3","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_3_body_3_6e41fbc.png"},
+	{"name":"result_4_body_0","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_4_body_0_db199fc.png"},
+	{"name":"result_4_body_1","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_4_body_1_4b3102a.png"},
+	{"name":"result_4_body_2","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_4_body_2_9532293.png"},
+	{"name":"result_4_body_3","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_4_body_3_7d19eb9.png"},
+	{"name":"result_5_body_0","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_5_body_0_cac3f88.png"},
+	{"name":"result_5_body_1","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_5_body_1_02174b0.png"},
+	{"name":"result_5_body_2","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_5_body_2_14da0d5.png"},
+	{"name":"result_5_body_3","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_5_body_3_4a841dd.png"},
+	{"name":"result_6_body_0","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_6_body_0_385d803.png"},
+	{"name":"result_6_body_1","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_6_body_1_f1500e1.png"},
+	{"name":"result_6_body_2","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_6_body_2_b3cca46.png"},
+	{"name":"result_6_body_3","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_6_body_3_8109752.png"},
+	{"name":"result_7_body_0","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_7_body_0_1934dc0.png"},
+	{"name":"result_7_body_1","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_7_body_1_2671bb1.png"},
+	{"name":"result_7_body_2","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_7_body_2_315af4f.png"},
+	{"name":"result_7_body_3","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_7_body_3_210c3f0.png"},
+	{"name":"result_8_body_0","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_8_body_0_4012145.png"},
+	{"name":"result_8_body_1","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_8_body_1_502e573.png"},
+	{"name":"result_8_body_2","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_8_body_2_c7d1724.png"},
+	{"name":"result_8_body_3","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_8_body_3_45470e7.png"},
+	{"name":"result_1_frame_1","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_1_frame_1_62d25b8.png"},
+	{"name":"result_1_frame_0","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_1_frame_0_355ae69.png"},
+	{"name":"result_2_frame_1","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_2_frame_1_4b1fa8f.png"},
+	{"name":"result_2_frame_0","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_2_frame_0_db20ecb.png"},
+	{"name":"result_3_frame_1","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_3_frame_1_07ed95c.png"},
+	{"name":"result_3_frame_0","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_3_frame_0_f5bc8ef.png"},
+	{"name":"result_4_frame_1","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_4_frame_1_562ec53.png"},
+	{"name":"result_4_frame_0","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_4_frame_0_8d17c1b.png"},
+	{"name":"result_5_frame_1","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_5_frame_1_c58f176.png"},
+	{"name":"result_5_frame_0","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_5_frame_0_56ff89e.png"},
+	{"name":"result_6_frame_1","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_6_frame_1_8035d66.png"},
+	{"name":"result_6_frame_0","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_6_frame_0_bdbad63.png"},
+	{"name":"result_7_frame_1","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_7_frame_1_61e1bdb.png"},
+	{"name":"result_7_frame_0","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_7_frame_0_4e40c11.png"},
+	{"name":"result_8_frame_1","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_8_frame_1_0b201db.png"},
+	{"name":"result_8_frame_0","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_8_frame_0_5f24cb4.png"},
+	{"name":"repeat","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/repeat_610d032.png"},
+	{"name":"share_tip_0","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/share_tip_0_8c989bc.png"},
+	{"name":"share_tip_1","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/share_tip_1_bb73a5d.png"},
+	{"name":"share_tip_2","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/share_tip_2_fb18605.png"},
+	{"name":"share_tip_3","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/share_tip_3_2df0b4d.png"},
+	{"name":"share_tip_4","type":"image","url":"http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/share_tip_4_99efdd0.png"},
+	{"name":"shake","type":"audio","url":"http://softfile.3g.qq.com/myapp/mig_web_media/151231-newyear/shake.mp3"},
+	{"name":"result","type":"audio","url":"http://softfile.3g.qq.com/myapp/mig_web_media/151231-newyear/result.mp3"},
+	
+];
+
+
+var LoaderCanvas;
+var LoaderContext;
+var LoaderMovie;
+var MovieFrame=0;
+
+var user_size = {width:0,height:0};
+var movie_size = {width:0,height:0};
+var body_size = {width:0,height:0};
+var PageResource = {};
+var LoadedResource = 0;
+var LoaderProcess=0;
+
+function pre_loader(){
+	for(i=0;i<pre_resource.length;i++){
+		
+		if(pre_resource[i].type=="image"){
+			PageResource[pre_resource[i].name] = new Image();
+			PageResource[pre_resource[i].name].src = pre_resource[i].url;
+			PageResource[pre_resource[i].name].onload = function(){
+				LoadedResource++;
+			}
+		}
+		if(pre_resource[i].type=="audio"){
+		
+			PageResource[pre_resource[i].name] =  document.createElement("audio");
+			PageResource[pre_resource[i].name].src = pre_resource[i].url;
+			LoadedResource++;
+		}
+	}
+	
+	var loaderInterval = setInterval(function(){
+		if (LoadedResource>=pre_resource.length){
+			clearInterval(loaderInterval);
+			$("#loading").show();
+			LoaderCanvas = document.getElementById("loader_movie");
+			LoaderContext = LoaderCanvas.getContext("2d");
+			
+			LoadedResource = 0;
+			page_loader();
+		};
+	},20)
+}
+
+function page_loader(){
+	LoadedResource=0;
+	
+	for(i=0;i<page_resource.length;i++){
+		if(page_resource[i].type=="image"){
+			PageResource[page_resource[i].name] = new Image();
+			PageResource[page_resource[i].name].src = page_resource[i].url;
+			PageResource[page_resource[i].name].onload = function(){
+				LoadedResource++;
+			}
+		}
+		if(page_resource[i].type=="audio"){
+			PageResource[page_resource[i].name] =  document.createElement("audio");
+			PageResource[page_resource[i].name].src = page_resource[i].url;
+			LoadedResource++;
+		}
+		
+	}
+	setTimeout(function(){
+		  PageResource["lion"].play();
+	},500);
+		
+	
+	var loaderInterval = setInterval(function(){
+		MovieFrame++;
+		if (LoaderProcess<Math.ceil(LoadedResource/page_resource.length*100)){
+			LoaderProcess++;
+		}
+		LoaderContext.clearRect(0,0,640,700);
+		if (MovieFrame==90){
+			MovieFrame =0;
+		}
+		LoaderContext.font="30px Georgia";
+		LoaderContext.fillStyle = "#ce9c55";
+		LoaderContext.textAlign="center";
+		LoaderContext.fillText(LoaderProcess+"%",320,350);
+		
+		if (LoaderProcess==100){
+
+			setTimeout(function(){
+				
+				$("#loader").fadeOut(500);
+				$("#index").fadeIn(500);
+				ConsoleWrite("addEventListener");
+				window.addEventListener('devicemotion', deviceMotionHandler, false);
+			},1000)
+			clearInterval(loaderInterval);
+			
+		};
+	},20)
+}
+
+$(document).ready(function(e) {
+	user_size.width = 640;
+	user_size.height = window.innerHeight;
+	movie_size.width=640;
+	movie_size.height = user_size.height-100;
+	body_size.height = movie_size.height-320;
+	body_size.width = body_size.height/600*528;
+	pre_loader();
+	$("#result_canvas").attr("width","640").attr("height",movie_size.height);
+	$("#result_canvas").css("width","640px").attr("height",movie_size.height+"px");
+	
+});
+
+
+var result_arr = [1,2,3,4,5,6,7,8];
+var try_count=0;
+
+$(document).ready(function(e) {
+	document.body.addEventListener('touchmove', function (e){e.preventDefault();}, false);
+	for(var i=0;i<20;i++){
+		var rnd_1 = Math.floor(8*Math.random());
+		var rnd_2 =  Math.floor(8*Math.random());
+		var tmp = result_arr[rnd_1];
+		result_arr[rnd_1] =  result_arr[rnd_2];
+		result_arr[rnd_2] = tmp;
+	
+	}
+	
+	
+	
+	$("#index").click(function(){
+		return;
+		$("#shake").fadeOut(300);
+		$("#shake_tip").fadeOut(300);
+		setTimeout(function(){
+			$("#door_left").animate({'left':'-350px'},800);
+			$("#door_right").animate({'right':'-350px'},800);
+		},300)
+		setTimeout(function(){
+			$(".result_pic").hide();
+			$(".result_pic").eq(result_arr[try_count]).show();
+			$("#result").fadeIn(300);
+			
+		},600)
+		setTimeout(function(){
+			$("#index").hide();
+			
+		},1100)
+	})
+	
+	$("#btn_share").click(function(){
+		share();
+	})
+	$("#share").click(function(){
+		$("#share").hide();
+		on_shake = true;
+		clearInterval(ShareInterval);
+	})
+	
+	$("#btn_friend").click(function(){
+		doAsyn(sendAppMessage);
+	})
+	
+	
+	$("#btn_timeline").click(function(){
+		doAsyn(shareTimeline);
+	})
+	
+	doAsyn(function(){
+   	    $("#btn_app").hide();
+		$("#btn_share").hide();
+		$("#btn_timeline").show();
+		$("#btn_friend").show();
+    });
+	
+});
+
+
+var on_shake =true;
+var MovieInterval;
+var MovieFrame= 0;
+var SHAKE_THRESHOLD = 3000;
+var last_update = 0;
+var x = y = z = last_x = last_y = last_z = 0;
+var SHAKE_COUNT = 0;
+function deviceMotionHandler(eventData) {
+	var acceleration = eventData.accelerationIncludingGravity;
+	var curTime = new Date().getTime();
+	if ((curTime - last_update) > 100) {
+		var diffTime = curTime - last_update;
+		last_update = curTime;
+		x = acceleration.x;
+		y = acceleration.y;
+		z = acceleration.z;
+		var speed = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime * 10000;
+
+		if (speed > SHAKE_THRESHOLD) {
+			if(!on_shake) return;
+			if($("#share:visible").length>0)return;
+			on_shake =false;
+			ConsoleWrite("show_result");
+			show_result();
+			
+		}
+		last_x = x;
+		last_y = y;
+		last_z = z;
+	}
+}
+
+	
+function show_result(){
+	PageResource["result"].pause();
+	PageResource["shake"].play();
+	ConsoleWrite("result");
+	if($("#index:visible").length>0){
+
+		$("#shake").fadeOut(300);
+		$("#shake_tip").fadeOut(300);
+			
+		setTimeout(function(){
+			$("#door_left").animate({'left':'-350px'},800);
+			$("#door_right").animate({'right':'-350px'},800);
+		},300)
+		setTimeout(function(){
+			$("#index").hide();
+		},1100)
+	}
+	setTimeout(function(){
+		
+		ResultCanvas = document.getElementById("result_canvas");
+		ResultContext = ResultCanvas.getContext("2d");
+		$("#result").fadeIn(300);
+		clearInterval(MovieInterval);
+		var ResultID= result_arr[try_count];
+		
+		setShare(ResultID);
+		
+		MovieFrame =0;
+		MovieInterval = setInterval(function(){
+			ResultContext.clearRect(0,0,640,1000);
+			MovieFrame++;
+			
+			ResultContext.drawImage(PageResource['result_'+ResultID+'_frame_'+(MovieFrame%2)],0,0,640,300,0,0,640,300);
+			ResultContext.drawImage(PageResource['result_'+ResultID+'_frame_1'],0,918-movie_size.height+300,640,movie_size.height-300,0,300,640,movie_size.height-300	);
+			
+			ResultContext.drawImage(PageResource['result_'+ResultID+'_body_'+(MovieFrame%4)],0,0,528,600,320-body_size.width*0.5,250,body_size.width,body_size.height);
+			if ((try_count>0 && MovieFrame>10) || (try_count==0 && MovieFrame>20)){
+				if (MovieFrame%10==6){
+					ResultContext.drawImage(PageResource['repeat'],0,0,30,160,550-2,movie_size.height*0.6-80-4,30,160);
+				}else if (MovieFrame%10==7){
+					ResultContext.drawImage(PageResource['repeat'],0,0,30,160,550+2,movie_size.height*0.6-80+4,30,160);
+				}else if (MovieFrame%10==8){
+					ResultContext.drawImage(PageResource['repeat'],0,0,30,160,550-1,movie_size.height*0.6-80-2,30,160);
+				}else if (MovieFrame%10==9){
+					ResultContext.drawImage(PageResource['repeat'],0,0,30,160,550+1,movie_size.height*0.6-80+2,30,160);
+				}else if (MovieFrame%10<6){
+					ResultContext.drawImage(PageResource['repeat'],0,0,30,160,550,movie_size.height*0.6-80,30,160);
+				}
+			}
+		},300);
+			
+	},600)
+			
+	setTimeout(function(){
+		PageResource["result"].play();
+	},2200)
+	setTimeout(function(){
+		on_shake = true;
+		try_count++;
+		if (try_count>7){
+			try_count=0;
+		}
+	},4000)
+
+}
+
+var ShareInterval;
+var ShareMovieFrame;
+function share(){
+	on_shake = false;
+	ShareCanvas = document.getElementById("share_canvas");
+	ShareContext = ShareCanvas.getContext("2d");
+	ShareContext.clearRect(0,0,640,1000);
+	clearInterval(ShareInterval);
+	$("#share").show();
+	ShareMovieFrame =0;
+	ShareInterval = setInterval(function(){
+		ShareContext.clearRect(0,0,640,1000);
+		ShareMovieFrame++;
+			
+		ShareContext.drawImage(PageResource['share_tip_'+(ShareMovieFrame%5)],0,0);
+			
+	},350);
+			
+}
+
+</script>
+	<title>2016，求个明星门神守护你</title>
+</head>
+<body>
+
+<section id="loader">
+	<div id="loading"><img src="http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/loading_df823d3.gif"></div>
+	<canvas id="loader_movie" width="640" height="700"></canvas>
+</section>
+
+<section id="result">
+	<div class="result_bg"><img src="http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/result_bg_44e8f07.jpg"></div>
+	<canvas id="result_canvas"></canvas>
+    <div id="result_btn">
+    	<div id="btn_share"><img src="http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/btn_share_e3065fb.png" onclick="pgvSendClick({hottag:'MOBILE.ACTIVITY.NEWYEAR.SHAREBTN'});"></div>
+        <div id="btn_app"><img src="http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/btn_app_de70d27.png" onclick="pgvSendClick({hottag:'MOBILE.ACTIVITY.NEWYEAR.DOWNLOAD'});"></div>
+        <div id="btn_friend"><img src="http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/btn_friend_b55fefe.png" onclick="pgvSendClick({hottag:'MOBILE.ACTIVITY.NEWYEAR.SHAREBTN'});"></div>
+        <div id="btn_timeline"><img src="http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/btn_share_e3065fb.png" onclick="pgvSendClick({hottag:'MOBILE.ACTIVITY.NEWYEAR.SHAREBTN'});"></div>
+    </div>
+</section>
+
+<section id="index">
+	<div id="door_left">
+    	<div class="door_pic"><img src="http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/door_left_9736742.png"></div>
+        <div id="door_text"><img src="http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/door_text_ab54c2e.png"></div>
+    </div>
+    <div id="door_right">
+    	<div class="door_pic"><img src="http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/door_right_6856613.png"></div>
+    </div>
+    <div id="shake_tip"><img src="http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/shake_tip_0e55b81.png"></div>
+	<div id="shake"><img src="http://3gimg.qq.com/mig-web/2015/market/151231-newyear/images/shake_a5ddc5c.png"></div>
+</section>
+
+<section id="share">
+	<div class="pop_mask"></div>
+    <canvas id="share_canvas" width="450" height="700"></canvas>
+</section>
+
+
+<script language="javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script language="javascript" src="http://pingjs.qq.com/tcss.ping.js"></script>
+<script language="javascript">
+	if(typeof(pgvMain) == 'function'){
+    	pgvMain();
+    }
+
+	$(function(){
+		doAsyn(setMenuItemsShowable);
+	});
+	
+	function doAsyn(callback) {
+
+	    if (typeof TcsJSBridge == "object" && typeof TcsJSBridge.invoke == "function") {
+	        // log("ready for: " + callback);
+	        callback();
+	    } else {
+	        if (document.addEventListener) {
+	            // log("not ready, addEventListener for: " + callback);
+	            document.addEventListener("TcsJSBridgeReady", callback, false);
+	        } else if (document.attachEvent) {
+	            document.attachEvent("TcsJSBridgeReady", callback);
+	            document.attachEvent("onTcsJSBridgeReady", callback);
+	        }
+
+	    }
+	}
+	
+	
+	function shareTimeline() {
+	    TcsJSBridge.invoke("shareTimeline", {
+	        appid: "wx06e3073fd4d17e3b", // 微信接口有这个参数，所以允许传，手管不使用该参数
+	        img_url:shareParam.logo,
+	        img_width: "200", // 微信接口有这个参数，所以允许传，手管暂不使用该参数
+	        img_height: "200", // 微信接口有这个参数，所以允许传，手管暂不使用该参数
+	        link: shareParam.link,
+	        desc: shareParam.desc,
+	        title: shareParam.title
+	    }, function(res) {
+	    });
+	}
+
+	function sendAppMessage() {
+	    TcsJSBridge.invoke("sendAppMessage", {
+	        appid: "wx06e3073fd4d17e3b", // 微信接口有这个参数，所以允许传，手管不使用该参数
+	        img_url:shareParam.logo,
+	        img_width: "200", // 微信接口有这个参数，所以允许传，手管暂不使用该参数
+	        img_height: "200", // 微信接口有这个参数，所以允许传，手管暂不使用该参数
+	        link: shareParam.link,
+	        desc: shareParam.desc,
+	        title: shareParam.title
+	    }, function(res) {
+	    });
+	}
+	
+	
+	
+	
+	
+	
+	
+	function setMenuItemsShowable() {
+
+	    TcsJSBridge.invoke("setMenuItemsShowable", {
+	        share : false,
+
+	        copyLink : false,
+	        browser : false,
+	        refresh : true
+	    }, function(res) {
+
+	    });
+
+	}
+
+	var ua = navigator.userAgent;
+	if (/Android (\d+\.\d+)/.test(ua)){
+		var ua=navigator.userAgent,
+				$opengj=document.getElementById('btn_app'),
+				download_id,
+				sdkurl='http://qqwx.qq.com/s?aid=index&g_f=386';
+		if(window.TcsJSBridge){
+		
+		}else{
+			if(ua.indexOf("MicroMessenger") < 0  ){
+				//判断不是在微信里面
+				//$opengj.innerHTML='下载';
+				//$opengj.href=sdkurl;
+			}
+		}
+		
+		
+
+
+		$opengj.addEventListener('click',function(e){
+			if(window.TcsJSBridge){
+				TcsJSBridge.invoke("gotoQQSecure", {
+					viewId: 7798785,
+					finishSelf : false
+				}, function (res) {
+				});
+				return;
+			}
+			if (window.WeixinJSBridge) {
+				//获取安装状态
+				WeixinJSBridge.invoke("getInstallState", {
+					"packageName": "com.tencent.qqpimsecure"
+				}, function (res) {
+					var version=+res.err_msg.replace('get_install_state:yes_','');
+					if (res.err_msg != 'get_install_state:no' && version>1065) {
+						//有安装并且安装版本号大于1018调起管家
+						WeixinJSBridge.invoke("launch3rdApp", {
+							"packageName": "com.tencent.qqpimsecure",
+							"signature": "00B1208638DE0FCD3E920886D658DAF6",
+							"param": "7798785",
+							"type": 1
+						}, function (res) {});
+					} else {
+						if(download_id){
+							//查询下装状态
+							WeixinJSBridge.invoke("queryDownloadTask",{
+								"download_id": download_id
+							},function(res){
+								if(res.state=='download_succ'){
+									//下载成功安装
+									WeixinJSBridge.invoke("installDownloadTask", {
+										"download_id": download_id
+									}, function (res) {
+									});
+								}else{
+									down();
+								}
+							});
+						}else{
+							down();
+						}
+					}
+				});
+			} else {
+				//window.location.href = sdkurl;
+			}
+		});
+		if (typeof WeixinJSBridge == "object" && typeof WeixinJSBridge.invoke == "function") {
+			WeixinCallback();
+			WeixinCallback2();
+		} else {
+			document.addEventListener("WeixinJSBridgeReady", WeixinCallback, false);
+			document.addEventListener("WeixinJSBridgeReady", WeixinCallback2, false);
+		}
+
+		mqq.app.checkAppInstalled('com.tencent.qqpimsecure', function (ret) {
+			if(parseFloat(ret)>5.6){
+				var iframe=document.createElement('iframe');
+				iframe.style.display='none';
+				iframe.src='tcsecure://com.tencent.qqpimsecure/call_at_bg/wetchat/show003/c99002';
+				document.body.appendChild(iframe);
+				return;
+			}
+
+		})
+
+
+
+
+
+	}else{
+		document.getElementById('btn_app').addEventListener('click',function(){
+			if(window.navigator.userAgent.indexOf('OS')>-1){
+					var frame = document.createElement('iframe');
+					frame.src = 'mqqsecure://';
+					frame.style.display = 'none';
+					document.body.appendChild(frame);
+					frame.parentNode.removeChild(frame);
+					frame = null;
+
+			//下载
+					setTimeout(function(){
+						window.location='https://itunes.apple.com/app/apple-store/id439638720?pt=69276&ct=face&mt=8';
+
+					},400);
+			
+		
+			}else{
+				window.location.href='http://m.qq.com';
+			}
+		});
+
+		if (typeof WeixinJSBridge == "object" && typeof WeixinJSBridge.invoke == "function") {
+			iosWeixinCallback();
+		} else {
+			document.addEventListener("WeixinJSBridgeReady", iosWeixinCallback, false);
+		}
+
+	}
+
+
+
+
+
+	function iosWeixinCallback(){
+
+		WeixinJSBridge.invoke("getInstallState", {
+			packageUrl: "mqqsecure://"
+		}, function (b) {
+			if (b.err_msg !== "get_install_state:no") {
+			}
+		});
+	}
+
+
+	function down(){
+		//下载
+		//$opengj.innerHTML='下载中...';
+		WeixinJSBridge.invoke("addDownloadTask", {
+			"task_name": "手机管家",
+			"task_url": 'http://misc.wcd.qq.com/app?packageName=com.tencent.qqpimsecure&channelId=80577',
+			"file_md5": '6B4702591BA818EB9A95989743F82324'
+		}, function (res) {
+			download_id = res.download_id;
+		});
+	}
+
+
+
+	function WeixinCallback2(){
+
+		WeixinJSBridge.invoke("getInstallState", {
+			"packageName": "com.tencent.qqpimsecure"
+
+		}, function (res) {
+
+			var version=+res.err_msg.replace('get_install_state:yes_','');
+
+			if (res.err_msg != 'get_install_state:no' && version>=1065) {
+
+				WeixinJSBridge.invoke("launch3rdApp", {
+
+					"packageName": "com.tencent.qqpimsecure",
+
+					"signature": "00B1208638DE0FCD3E920886D658DAF6",
+
+					"param": "{'dest_view':65537,'show_id':'show001','show_channel':'c99002'}",
+
+					"type": 1
+
+				}, function (res) {});
+
+			}
+
+		});
+
+	}
+
+
+	function WeixinCallback(){
+		getInstallState();
+
+		//绑定监听APP的下载状态事件
+
+		WeixinJSBridge.on("wxdownload:state_change", function (res) {
+			if (download_id == res.download_id && res.state == 'download_succ') {
+				//如果下载成功调起安装
+				WeixinJSBridge.invoke("installDownloadTask", {
+					"download_id": download_id
+				}, function (res) {
+				});
+			}
+		});
+		//绑定监听微信与外部界面的切换
+
+		WeixinJSBridge.on("activity:state_change", function(res){
+
+			if(res.state=='onResume'){
+				//查询APP下载状态
+				WeixinJSBridge.invoke("queryDownloadTask",{
+					"download_id": download_id
+				},function(res){
+
+					if(res.state=='default'){
+						//$opengj.innerHTML='下载';
+
+					}else if(res.state=='download_succ'){
+
+						getInstallState()
+
+					}
+
+				});
+
+			}
+
+		});
+	};
+
+
+
+
+	function getInstallState(){
+		//检查安装以及版本
+		WeixinJSBridge.invoke("getInstallState", {
+			"packageName": "com.tencent.qqpimsecure"
+		}, function (res) {
+			if (res.err_msg != 'get_install_state:no') {
+				var version=+res.err_msg.replace('get_install_state:yes_','');
+				if(version>1065){
+					//$opengj.innerHTML='打开';
+				}else{
+					//$opengj.innerHTML='下载';
+				}
+			}else{
+				//$opengj.innerHTML='下载';
+			}
+		});
+	}
+
+</script>
+
+</body>
+</html>

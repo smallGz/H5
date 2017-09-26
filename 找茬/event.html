@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html id="html">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+<title>真露</title> 
+<script src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/setViewPort.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+<div class="event-wrap">
+	<div class="timeOut">
+		<div class="time">
+			<span class="cup" id='cupOn'>
+				<i></i><i></i><i></i><i></i><i></i>
+			</span>
+			<span class='cupNum'>
+				<em id='timeNum'>5</em>/5
+			</span>
+		</div>
+	</div>
+	<div class="game" id="picbox">
+		<div class="piccell" id="leftpic"> </div>
+    	<div  class="piccell" id="rightpic"> </div>
+    	<div class="gameT"></div>
+	</div>
+</div>
+
+<!-- 选择进入游戏 START -->
+<div class="infor-wrap" id="inforDiv">
+	<img src="images/eventTop.png" alt="">
+	<div class="userDiv">
+		<dl>
+			<dt><img src="images/8_03.jpg" alt=""></dt>
+			<dd><span>KIM DONG ILKIM DONG IL</span>的情况<br>已通过了<em>2</em>关！</dd>
+		</dl>
+	</div>
+	<div class="txt_0"></div>
+	<div id="noComplete">
+		<ul class="levelList">
+			<li class="on"><img src="images/level_1.jpg" alt=""><p>不知</p><em></em></li>
+			<li class="mag"><img src="images/level_2.jpg" alt=""><p>不觉</p><em></em></li>
+			<li><img src="images/level_3.jpg" alt=""><p>喜欢你</p><em></em></li>
+		</ul>
+		<div class="inforBtn">
+			<a href="javascript:void(0)" class="if-btn-0" id="startPop">帮助朋友找茬</a>
+			<a href="javascript:void(0)" class="if-btn-1">我也想参与游戏</a>
+		</div>
+	</div>
+	<div id="Complete" style="display:none">
+		<img src="images/kp.png" alt="">
+		<div class="cltBg">
+			<p>恭喜你<br>成功集齐所有卡片<br>我们会在3月3日通知您结果~</p>
+
+		</div>
+	</div>
+</div>
+<!-- 选择进入游戏 END -->
+<div class="popup" id="explainDiv">
+	<!-- <div class="close" id="explainClose"></div> -->
+	<div class="popupIn">
+		<h2>首先<br>你有5秒钟的<br>时间观察原图</h2>
+		<p>游戏开始后，<br>请点击后图中的不同点</p>
+		<a href="javascript:void(0)" class="btnCss" id="startGame">挑战开始</a>
+	</div>
+</div>
+<div class="popup" id="countDownDiv">
+	<!-- <div class="close" id="countDownClose"></div> -->
+	<div class="popupIn">
+		<h2>就是现在了！</h2>
+		<p>找出该图与原图中的N处不同点。</p>
+		<div class="countDown" id="timeStart">
+			<span><i>3</i></span>
+			<span><img src="images/btn-2.png" alt=""><i>2</i></span>
+			<span><img src="images/btn-2.png" alt=""><i>1</i></span>
+			<span><img src="images/btn-2.png" alt=""><b>START</b></span>
+		</div>
+	</div>
+</div>
+<!-- 挑战失败 -->
+<div class="popup" id="gameFailDiv">
+	<div class="close" id="gameFailClose"></div>
+	<div class="popupIn">
+		<h2>挑战失败？<br>想要再玩一次吗？<br>点击分享至朋友圈/朋友<br>可再增加一次机会</h2>
+		<a href="javascript:void(0)" id="againBtn">重新挑战</a>
+		<p>分享至朋友圈再来挑战一次</p>
+		
+	</div>
+</div>
+<!-- 分享 -->
+<div class="popup" id="toShareDiv" style="display:block">
+	<div class="close" id="toShareClose"></div>
+	<div class="popupIn">
+		<img src="images/share_03.jpg" alt="">
+	</div>
+</div>
+<!-- 扫码 -->
+<div class="popup" id="toSmDiv">
+	<div class="close" id="toSmClose"></div>
+	<div class="popupIn">
+		<!-- <img src="images/sm_03.jpg" alt=""> -->
+	</div>
+</div>
+<!-- 闯关 -->
+<div class="popup" id="passDiv">
+	<div class="close" id="passClose"></div>
+	<div class="popupIn">
+		<h2>恭喜您，挑战成功</h2>
+	</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		
+		$('#passClose').click(function(){
+			$('#passDiv').hide();
+		})
+		$('#startPop').click(function(){
+			$('#explainDiv').show();
+		})
+		$('#startGame').click(function(){
+			$('#explainDiv,#inforDiv').hide();
+			$('#countDownDiv').show();
+			$('.piccell').show();
+			picgame.gamestart();
+			
+		})
+		//picimgs=[{url1:"images/001/001-1.jpg",url2:"images/001/001-2.jpg",w:653,h:906,data:[{w:86,h:52,l:70,t:273},{w:55,h:63,l:39,t:698},{w:69,h:20,l:102,t:751},{w:75,h:71,l:225,t:566},{w:109,h:102,l:544,t:804}]},{url1:"images/002/002-1.jpg",url2:"images/002/002-2.jpg",w:653,h:906,data:[{w:48,h:35,l:231,t:278},{w:83,h:51,l:221,t:51},{w:114,h:130,l:213,t:119},{w:98,h:92,l:84,t:308},{w:32,h:45,l:213,t:506}]},{url1:"images/003/003-1.jpg",url2:"images/003/003-2.jpg",w:653,h:906,data:[{w:38,h:40,l:172,t:187},{w:181,h:48,l:463,t:12},{w:51,h:48,l:375,t:680},{w:101,h:109,l:81,t:354},{w:157,h:486,l:496,t:304}]}];
+		picimgs=[{url1:"images/001/001-1.jpg",url2:"images/001/001-2.jpg",w:653,h:906,data:[{w:86,h:52,l:70,t:273},{w:108,h:110,l:26,t:140},{w:75,h:71,l:225,t:566}]},{url1:"images/002/002-1.jpg",url2:"images/002/002-2.jpg",w:653,h:906,data:[{w:186,h:171,l:206,t:81},{w:52,h:46,l:233,t:275},{w:85,h:84,l:374,t:672}]},{url1:"images/003/003-1.jpg",url2:"images/003/003-2.jpg",w:653,h:906,data:[{w:263,h:256,l:0,t:0},{w:61,h:51,l:371,t:676},{w:98,h:97,l:555,t:762}]}];
+
+		//游戏
+		var picgame = {
+		    action: {
+		        totalNum : 0,//几处不同
+		        clickNum : 0,//鼠标点击次数
+		        correctNum : 0,//找对张数
+		        correctPecent : 0,//正确率
+		        timerPasser : 0,
+		        clickData : null //点击不同之处
+
+		    },
+		    timer : null,
+		    second : 0,
+		    maxSecond : 60,
+		    currIndex : 1,
+		    firstInit : 0,
+		    cupNum : 0,
+		    //初始化
+		    init : function(index,type){
+		        var img = picimgs[index];
+		        this.currIndex = index;
+		        var self = this;
+		        this.action.totalNum = img.data.length;
+		        this.action.clickData = img.data;
+
+		        for(var i=0;i<this.action.clickData.length;i++){
+		            this.action.clickData[i].find = false;
+		        }
+		        $('#leftpic').css({
+		            width : img.w/45 + 'rem',
+		            height : img.h/45 + 'rem',
+		            background : "url(" + img.url1 + ")",
+		                "background-size": img.w/45 + "rem " + img.h/45 + "rem"
+		        });
+		        $('#rightpic').css({
+		            width : img.w/45 + 'rem',
+		            height : img.h/45 + 'rem',
+		            background : "url(" + img.url2 + ")",
+		                "background-size": img.w/45 + "rem " + img.h/45 + "rem"
+		        });
+		        for(var i=0;i<img.data.length;i++){
+		            var item = img.data[i];
+		            var $mask1 = $("<div id='maskleft" + i + "' data-id='" + i + "'></div>").addClass("floatmask").css({
+		                width: item.w/45 + "rem",
+		                height: item.h/45 + "rem",
+		                left: item.l/45 + "rem",
+		                top: item.t/45 + "rem"
+		            });
+		            var $mask2 = $("<div  id='maskright" + i + "'  data-id='" + i + "'><div class='gameR'></div></div>").addClass("floatmask").css({
+		                width: item.w/45 + "rem",
+		                height: item.h/45 + "rem",
+		                left: item.l/45 + "rem",
+		                top: item.t/45 + "rem"
+		            });
+		            
+		            $mask2.click(function(e) {
+		                var id = $(this).attr("data-id");
+		                self.action.clickData[id].find = 1;
+		                self.action.clickNum = self.action.clickNum + 1;
+		                self.showTips();
+		                $('.gameR:eq('+ id +')').show();
+		                // $('.gameT').css({
+		                //     'left':this.offsetLeft + 'px',
+		                //     'top':this.offsetTop + 'px',
+		                //     'background':'url(images/right-btn.png) no-repeat',
+		                //     'background-size':'cover'
+		                // });
+		                e.stopPropagation();
+		                e.preventDefault()
+		            });
+		            $("#leftpic").append($mask1);
+		            $("#rightpic").append($mask2)
+		        };
+		        if (self.firstInit == 0) {
+		            self.firstInit = 1;
+		            $("#rightpic").click(function(e) {
+		                self.action.clickNum = self.action.clickNum + 1;
+		                self.showTips();
+		                $('.gameT').fadeIn().css({
+		                    'left':e.clientX - $('#picbox').offset().left - $('.gameT').width()/2 + 'px',
+		                    'top':e.clientY -$('#picbox').offset().top - $('.gameT').height()/2 + 'px',
+		                    'background':'url(images/wront-btn.png) no-repeat',
+		                    'background-size':'cover'
+		                }).fadeOut('500');
+		            })
+		        }
+		        self.showTips();
+		    },
+		    showTips : function(){
+		        var self = this;
+		        var correctNum = 0;
+		        
+		        for(var i=0;i<this.action.clickData.length;i++){
+		            var item = this.action.clickData[i];
+		            if(item.find){
+		             correctNum = correctNum + 1;   
+		            }
+		        }
+		        this.action.correctNum = correctNum ;
+		        this.action.correctPecent = parseInt(correctNum * 100 / this.action.clickNum) ? parseInt(correctNum * 100 / this.action.clickNum) : 0;
+		        $("#totalNum").html(this.action.totalNum);
+		        $("#clickNum").html(this.action.clickNum);
+		        $("#timeNum").html(this.action.correctNum);
+		        $("#correctPecent").html(this.action.correctPecent);
+		        $("#currLevel").html(self.currIndex + 1);
+
+		        //全找对，进入下一关
+		        if (this.action.correctNum == this.action.totalNum) {
+		            self.gameNext();
+		        }
+		        
+
+		    },
+		    startTimer : function(){
+		        var self = this;
+		        this.timer = setInterval(function(){
+		            self.second = self.second + 1;
+		            var percent = Math.max(parseInt((self.maxSecond - self.second) * 100 / self.maxSecond), 0);
+		            var cupNum = Math.floor((self.maxSecond - self.second)/(self.maxSecond / 5)) + 1;
+		            if (percent < 80) {
+		                $('#cupOn i').eq(cupNum).addClass('on');
+		            } 
+		            if(self.second == 10){
+		                $('#leftpic').css('transform','scaleX(0)');
+		                $('#rightpic').css('transform','scaleX(1)');
+		            }
+		            if(self.second == 5){
+		                $('#countDownDiv').hide();
+		            }
+		            $('#timeStart span:eq('+ (self.second - 1) +')').show();
+		            
+		        },1e3);
+		    },
+		    stopTimer: function() {
+		        clearInterval(this.timer)
+		    },
+		    gamestart : function(){
+		        if (this.timer) {
+		            this.stopTimer()
+		        }
+		        this.action = {
+		            totalNum: 0,
+		            clickNum: 0,
+		            correctNum: 0,
+		            correctPecent: 0,
+		            timerPasser: 0,
+		            clickData: null
+		        };
+		        this.timer = null;
+		        this.second = 0;
+		        this.maxSecond = 120;
+		        $("#leftpic").empty();
+		        $("#rightpic").empty();
+		        this.init(this.currIndex);
+		        this.startTimer()
+
+		    },
+		    gameNext : function(){
+		        var self = this;
+		        $('#inforDiv').fadeIn();
+	            $('#picbox').fadeOut();
+	            $('#noComplete').hide();
+	            $('#Complete').fadeIn();
+		        self.stopTimer();
+		    },
+		    gameover: function(optmsg) {
+		        var self = this;
+		        var msg = optmsg;
+		        alert(msg);
+		        self.stopTimer();
+		    }
+		 
+		}
+		
+	});
+ </script>
+</body>
+</html>

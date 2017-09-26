@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html id="html">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+<title>真露</title> 
+<script src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/setViewPort.js"></script>
+<script type="text/javascript" src="js/preloadjs-0.6.0.min.js"></script>
+<link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+<div class="index-wrap">
+  <img src="images/index-bg_01.jpg" alt="">
+  <div class="index-btn">
+    <a href="event.html" class="startBtn">开始游戏</a>
+    <a href="javascript:void(0)" class="viewCnt">查看活动内容>></a>
+  </div>
+</div>	
+<!-- 活动细则 -->
+<div class="popup" id="eventTipDiv">
+	<div class="close" id="eventTipClose"></div>
+	<div class="popupIn eventTip">
+		<h3>活动细则</h3>
+		<img src="images/eventTip.jpg" alt="">
+	</div>
+</div>
+<div class="loading"><div class="loadingtxt"></div></div>
+<script>
+	$(function(){
+		$('.viewCnt').click(function(){
+			$('#eventTipDiv').show();
+		})
+		$('#eventTipClose').click(function(){
+			$('#eventTipDiv').hide();
+		})
+		//预加载
+	//可调节的参数
+    var manifest=[
+        {src:'images/001/001-1.jpg'},
+        {src:'images/001/001-2.jpg'},
+        {src:'images/002/002-1.jpg'},
+        {src:'images/002/002-2.jpg'},
+        {src:'images/003/003-1.jpg'},
+        {src:'images/003/003-2.jpg'},
+        {src:'images/eventTip.jpg'},
+        {src:'images/index-bg_01.jpg'},
+        {src:'images/kp.png'},
+        {src:'images/level_1.jpg'},
+        {src:'images/level_2.jpg'},
+        {src:'images/level_3.jpg'},
+        {src:'images/share_03.jpg'},
+        {src:'images/sm_03.jpg'},
+        {src:'images/txt-0.png'},
+        {src:'images/txt-1.png'},
+        {src:'images/txt-2.png'},
+        {src:'images/txt-3.png'}
+    ];
+    
+    //loading
+    function handleOverallProgress(event){
+        $('.loadingtxt').text(Math.ceil(event.loaded*100)+"%");
+    }
+    function handleOverallComplete(event){
+        $('.loading').remove();
+    }
+    var loader = new createjs.LoadQueue(false);
+    loader.addEventListener("progress", handleOverallProgress);
+    loader.addEventListener("complete", handleOverallComplete);
+    loader.setMaxConnections(1);
+    loader.loadManifest(manifest);
+    //loading
+	})
+</script>
+</body>
+</html>

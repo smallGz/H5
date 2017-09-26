@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta name="format-detection" content="telephone=no" />
+<title>event</title>
+<link rel="stylesheet" type="text/css" href="css/common.css" />
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+</head>
+<body class="event1">
+	<div class="container">
+		<img src="img/event1_1.jpg" class="max"/>
+		<p class="btn-container tc">
+			<a href="#" class="join-btn"><img src="img/event1_btn1.png" alt="立即参与" class="max"/></a>
+			<a href="#" class="info-btn"><img src="img/event1_btn2.png" alt="活动详情" class="max"/></a>
+		</p>
+	</div>
+	<div class="follow-pop" style="display:none;">
+		<a href="#"><img src="img/fllow_pop.png" class="max" alt=""/></a>
+	</div>
+	<div class="info-pop" style="display:none;">
+		<img src="img/info_pop.png" class="max" alt=""/>
+		<div class="close-btn"><a href="#"><img src="img/close_btn.jpg" class="max" alt="close"/></a></div>
+		<div class="start-btn"><a href="event2.html"><img src="img/start_btn.png" class="max"/></a></div>
+	</div>
+	<script>
+		var isFollow = false;//팔로우 상태
+		$(document).ready(function(e) {			
+			//참여하기 버튼
+			$('.join-btn').on('click',function(e){				
+				if(!isFollow){
+					$('.follow-pop').show();
+				}
+				e.preventDefault();
+			});
+			//게임안내
+			$('.info-btn').on('click',function(e){							
+				$('.info-pop').show();
+				e.preventDefault();	
+			});
+			//팔로우 팝업창 닫기 
+			$('.follow-pop').on('click',function(e){				
+				$(this).hide();
+				e.preventDefault();	
+			});
+			//게임정보 팝업창 닫기 
+			$('.close-btn a').on('click',function(e){						
+				$(this).parent().parent().hide();
+				e.preventDefault();	
+			});
+		});
+	</script>
+</body>
+</html>

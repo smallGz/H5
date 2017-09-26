@@ -1,0 +1,587 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta name="format-detection" content="telephone=no" />
+<title>event</title>
+<link rel="stylesheet" type="text/css" href="css/common.css" />
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.animateSprite.js"></script>
+</head>
+<body class="event2">
+	<!--s:container-->
+	<div class="container">
+		<!--s:visual-container-->
+		<div class="visual-container">
+			<img src="img/event3_visual.jpg" class="max" alt=""/>
+			<div class="user-container">
+				<span class="user-pic"><img src="img/pic_user.jpg" width="35" height="37" alt=""/></span>
+				<span class="txt">OOO 快点掷骰子！<br> 距目的地仅差<span>10</span>格!!</span>
+				<span class="ticket"><img src="img/ticket.jpg" width="47" height="23" alt=""/></span>
+				<span class="rotate">+01</span>			
+			</div>			
+		</div>
+		<!--e:visual-container-->
+		<!--s:game-container-->
+		<div class="game-container">
+			<img src="img/game_bg.jpg" class="max" alt=""/>	
+			<div class="square"><img src="img/board_img1_off.jpg" class="max" alt=""/></div>	
+			<div class="square has-spot"><img src="img/board_img2_off.jpg" class="max" alt=""/></div>	
+			<div class="square has-spot"><img src="img/board_img3_off.jpg" class="max" alt=""/></div>
+			<div class="square"><img src="img/board_img4_off.jpg" class="max" alt=""/></div>
+			<div class="square has-spot"><img src="img/board_img5_off.jpg" class="max" alt=""/></div>
+			<div class="square has-spot"><img src="img/board_img6_off.jpg" class="max" alt=""/></div>
+			<div class="square has-spot"><img src="img/board_img7_off.jpg" class="max" alt=""/></div>
+			<div class="square"><img src="img/board_img8_off.jpg" class="max" alt=""/></div>
+			<div class="square has-gift"><img src="img/board_img9_off.jpg" class="max" alt=""/></div>
+			<div class="square has-spot"><img src="img/board_img10_off.jpg" class="max" alt=""/></div>
+			<div class="square has-spot"><img src="img/board_img11_off.jpg" class="max" alt=""/></div>
+			<div class="square has-spot"><img src="img/board_img12_off.jpg" class="max" alt=""/></div>
+			<div class="square has-spot"><img src="img/board_img13_off.jpg" class="max" alt=""/></div>
+			<div class="square has-spot"><img src="img/board_img14_off.jpg" class="max" alt=""/></div>
+			<div class="square has-gift"><img src="img/board_img15_off.jpg" class="max" alt=""/></div>
+			<div class="square has-spot"><img src="img/board_img16_off.jpg" class="max" alt=""/></div>
+			<div class="square has-spot"><img src="img/board_img17_off.jpg" class="max" alt=""/></div>
+			<div class="square"><img src="img/board_img18_off.jpg" class="max" alt=""/></div>
+			<div class="square has-friend"><img src="img/board_img19_off.jpg" class="max" alt=""/></div>
+			<div class="square has-spot"><img src="img/board_img20_off.jpg" class="max" alt=""/></div>
+			<div class="square has-goal"><img src="img/board_img21_off.jpg" class="max" alt=""/></div>	
+			<div class="airplane"><img src="img/airplane.png" alt="" class="max"/></div>
+			<div class="layer-pop" style="display:none;">
+				<img src="img/spot_pop1.png" class="max" alt=""/>
+				<div class="ok-btn tc" style="display:none;">
+					<a href="#"><img src="img/pop_ok.png" class="max" alt=""/></a>					
+				</div>
+			</div>
+			<div class="roll-friend-pop" style="display:none;">
+				<img src="img/roll_friend.png" class="max" alt=""/>
+				<div class="close-btn"><a href="#"><img src="img/roll_friend_close.jpg" class="max" alt=""/></a></div>
+				<div class="fllow-btn"><a href="#"><img src="img/roll_friend_btn.png" class="max" alt=""/></a></div>
+			</div>
+			<!--s:dice-panel-->
+			<div class="dice-panel" style="display:none;">
+				<img src="img/dice_panel_02.png" class="max" alt=""/>
+				<div class="dice-container">
+					<img src="img/dice_bg.png" class="max" alt=""/>
+					<div class="dice"></div>
+					<p class="text">托我的福前进了<span></span>大步呦~<br>记得请客哈~</p>
+				</div>
+			</div>	
+			<!--e:dice-panel-->	
+			<!--s:loading-panel-->
+			<div class="loading-panel" style="display:block;">
+				<img src="img/loading.gif" class="max" alt=""/>				
+			</div>	
+			<!--e:loading-panel-->			
+		</div>
+		<!--e:game-container-->
+		<!--s:roll-container-->
+		<div class="roll-container">
+			<img src="img/roll_bg.jpg" class="max" alt=""/>
+			<div class="roll-btn-group tc">
+				<a href="#" class="roll-btn"><img src="img/roll_btn1.png" class="max" alt=""/></a>
+				<a href="#" class="together-btn"><img src="img/together_btn.png" class="max" alt=""/></a>
+			</div>
+		</div>
+		<!--e:roll-container-->
+		<!--s:friend-container-->
+		<div class="friend-container">
+			<h1>出过力的朋友们<span>+24名</span></h1>
+			<table width="100%">
+				<colgroup>
+					<col width="15%"/>
+					<col width="*"/>
+					<col width="25%"/>					
+				</colgroup>
+				<tr>
+					<td><span class="user-pic"><img src="img/pic_user.jpg" width="35" height="37" alt=""/></span></td>
+					<td>
+						<p class="user"><span>GD</span>2015-09-04 00:00:00</p>
+						<p class="txt">仅掷出1点，明天继续努力~</p>
+					</td>
+					<td class="help-num">+1前进1格。</td>
+				</tr>
+				<tr>
+					<td><span class="user-pic"><img src="img/pic_user.jpg" width="35" height="37" alt=""/></span></td>
+					<td>
+						<p class="user"><span>GD</span>2015-09-04 00:00:00</p>
+						<p class="txt">仅掷出1点，明天继续努力~</p>
+					</td>
+					<td class="help-num">+1前进1格。</td>
+				</tr>
+				<tr>
+					<td><span class="user-pic"><img src="img/pic_user.jpg" width="35" height="37" alt=""/></span></td>
+					<td>
+						<p class="user"><span>GD</span>2015-09-04 00:00:00</p>
+						<p class="txt">仅掷出1点，明天继续努力~</p>
+					</td>
+					<td class="help-num">+1前进1格。</td>
+				</tr>				
+			</table>
+			<div class="pagination">
+				<a class="left arrow" href="#"><img src="img/left_arrow.jpg" width="18" height="18" alt=""/></a>
+				<a class="page-num select" href="#">1</a>
+				<a class="page-num" href="#">2</a>
+				<a class="page-num" href="#">3</a>
+				<a class="page-num" href="#">4</a>
+				<a class="page-num" href="#">5</a>
+				<a class="left arrow" href="#"><img src="img/right_arrow.jpg" width="18" height="18" alt=""/></a>
+			</div>
+		</div>
+		<!--e:friend-container-->
+		<!--s:frend-btn-container-->
+		<div class="frend-btn-container">
+			<img src="img/friend_bg.jpg" class="max" alt=""/>
+			<div class="friend-btn tc"><a href="#"><img src="img/friend_btn.png" class="max" alt=""/></a></div>
+		</div>
+		<!--e:frend-btn-container-->
+		<!--s:participation-->
+		<div class="participation">
+			<img src="img/participation_bg.jpg" class="max" alt=""/>
+		</div>
+		<!--e:participation-->
+	</div>
+	<!--s:follow-pop-->
+	<div class="follow-pop" style="display:none;">
+		<a href="#"><img src="img/friend_pop1.png" class="max" alt=""/></a>
+	</div>
+	<!--end:follow-pop-->
+	<!--s:friend-pop-->
+	<div class="friend-pop" style="display:none;">
+		<a href="#"><img src="img/friend_together.png" class="max" alt=""/></a>
+	</div>
+	<!--end:friend-pop-->
+	<!--e:container-->
+	<script>
+		var currentPos = 0;//현재위치
+		var totalNum = 20;
+		var plusNum;
+		var activeNum = 0;//활성화
+		var isFriend = true;//친구일 경우 true 주사위 굴렸을때 텍스트 유무
+		var diceNum = 2;//주사위값		
+		var isStepComplete = true;
+		var isFirst = true;//하루 한번
+		var isGoal = false;
+		//[top,left]
+		var directionArr =[['2.5%','2.5%'],
+						   ['18.5%','2.5%'],['18.5%','17.5%'],['18.5%','33.5%'],['18.5%','49.5%'],['18.5%','65.5%'],['18.5%','81.5%'],
+						   																							['33.5%','81.5%'],						   
+						   ['48.5%','81.5%'],['48.5%','65.5%'],['48.5%','49.5%'],['48.5%','33.5%'],['48.5%','17.5%'],['48.5%','2.5%'],
+						   ['65.5%','2.5%'],
+						   ['80.5%','2.5%'],['80.5%','17.5%'],['80.5%','33.5%'],['80.5%','49.5%'],['80.5%','65.5%'],['80.5%','81.5%']
+						   ];		
+		$(document).ready(function(e) {
+			init();
+			//친구이면 하단버튼 show & 게임전 팝업 show 아니면 hide
+			if(isFriend){
+				$('.together-btn').show();
+				$('.friend-pop').show();				
+			}else{
+				$('.together-btn').hide();
+				$('.friend-pop').hide();
+			}
+			
+			//하단 친구초대 버튼
+			$('.friend-btn a').on('click',function(e){ 
+				e.preventDefault();
+				$('.follow-pop a img').attr('src','img/friend_pop2.png').load(function(e){
+					$('.follow-pop').show();
+				});
+				
+			});
+			//팔로우 팝업창 닫기 
+			$('.follow-pop a').on('click',function(e){
+				e.preventDefault();
+				$('.follow-pop').hide();				
+			});
+			//친구 팝업창 닫기 
+			$('.friend-pop a').on('click',function(e){
+				e.preventDefault();
+				$('.friend-pop').hide();				
+			});			
+			//roll버튼 눌렀을때 뜨는 팝업창 닫기
+			$('.roll-friend-pop .close-btn a').on('click',function(e){ 
+				e.preventDefault();
+				$(this).parent().parent().hide();				
+			});
+			//roll버튼 눌렀을때 뜨는 팝업창의 친구초대
+			$('.roll-friend-pop .fllow-btn a').on('click',function(e){ 
+				e.preventDefault();				
+				$(this).parent().parent().hide();
+				$('.friend-btn a').trigger('click');
+			});					
+		});
+		function init(){
+			$('.square').each(function(index){				
+				imgChange(index,"_off");				
+			});
+			currentPos = activeNum;//현재위치
+			totalNum = 20;
+			plusNum;						
+			isStepComplete = true;
+			setLayout();			
+		}
+		function setLayout(){			
+			activeSetting(currentPos);
+			squareAddEvent();
+			rollAddEvent();
+		}
+		function rollAddEvent(){			
+			$('.roll-btn').on('click',function(e){				
+				e.preventDefault();
+				//diceNum = parseInt((Math.random()*6) + 1);//=====================================================================================주사위 테스트시									
+				if(isStepComplete){//게임 진행중 roll버튼 막기위해					
+					if(isFirst){						
+						isStepComplete = false;
+						$(window).scrollTop($('.user-container').position().top);					
+						diceStart();
+						isFirst = true;//주사위 계속 굴릴수 있게 true 한번만 false			
+					}else{						
+						//두번째 클릭 부터 안내 팝업
+						$('.roll-friend-pop').show();
+					}
+				}
+			});						
+		}
+		function rollRemoveEvent(){			
+			$('.roll-btn').off('click');				
+		}
+		function squareAddEvent(){			
+			//말판 클릭시 팝업 띄우기
+			$('.game-container .square').on('click',function(e){
+				//console.log("말판 클릭");				
+				var _index = $(this).index('.game-container .square');				
+				//현재 비행기 위치를 제외하고 클릭
+				if(_index != currentPos){
+					layerPop(_index,"click");					
+				}
+			});		
+		}
+		function squareRemoveEvent(){				
+			$('.game-container .square').off('click');
+		}
+		//주사위 레이어판
+		function diceStart(){
+			$('.dice-panel').removeClass('off');
+			$('.dice-panel').show();
+			$('.dice-panel').addClass('on');					
+			//diceAni(diceNum);
+			//0.6초후 주사위 애니메이션 시작
+			var diceAnitimer = setTimeout(function(){$('.dice').show();diceAni();},600);
+		}
+		
+		function layerPopCloseAddEvent(){			
+			//경품과 goal 닫기 버튼
+			$('.layer-pop .ok-btn a').on('click',function(e){
+				e.preventDefault();				
+				if(isGoal){
+					activeNum = 0;
+					init();		
+				}
+				layerPopCloseRemoveEvent();
+				$('.layer-pop').addClass('off').delay(600).fadeOut(50,function(){squareAddEvent();rollAddEvent();$('.layer-pop .ok-btn').hide();});
+			});		
+		}
+		function layerPopCloseRemoveEvent(){			
+			//경품과 goal 닫기 버튼
+			$('.layer-pop .ok-btn a').off('click');
+		}
+		
+		var completeTimer;
+		//_num : 주사위 숫자
+		function airplaneMove(_num){
+			var _moveClear;//각도 바꾸는 timer 없애기			
+			plusNum = currentPos + _num;			
+			var moveTimer = setInterval(function(){
+				if(currentPos != plusNum){
+					if(_num > 0){
+						currentPos = currentPos+1;
+					}else if(_num == "pass"){
+						//console.log("인천공항넘어가자")
+						currentPos= 15;
+						plusNum = 15;
+					}else{
+						currentPos = currentPos-1;
+					}															
+					$('.airplane').animate({'top':directionArr[currentPos][0],'left':directionArr[currentPos][1]},500,function(){												
+							if(currentPos == 1){								
+								$('.airplane').removeClass('down-direction');
+								$('.airplane').removeClass('right-direction');
+								$('.airplane').removeClass('left-down-direction');
+								$('.airplane').addClass('right-direction');
+								$('.airplane').addClass('move');
+								_moveClear = setTimeout(function(){$('.airplane').removeClass('move');},400);
+							}else if(currentPos == 6){						
+								$('.airplane').addClass('down-direction');
+								$('.airplane').addClass('move');
+								_moveClear = setTimeout(function(){$('.airplane').removeClass('move');},400);
+							}else if(currentPos == 8){						
+								$('.airplane').addClass('left-direction');
+								$('.airplane').addClass('move');
+								$('.airplane').removeClass('down-direction');
+								_moveClear = setTimeout(function(){$('.airplane').removeClass('move');},400);
+							}else if(currentPos == 13){													
+								$('.airplane').addClass('down-direction');
+								$('.airplane').addClass('move');
+								$('.airplane').removeClass('left-direction');
+								_moveClear = setTimeout(function(){$('.airplane').removeClass('move');},400);
+							}else if(currentPos == 15){								
+								$('.airplane').removeClass('left-down-direction');
+								$('.airplane').removeClass('down-direction');
+								$('.airplane').addClass('right-direction');
+								$('.airplane').addClass('move');
+								_moveClear = setTimeout(function(){$('.airplane').removeClass('move');},400);
+							}else if(currentPos == 20){
+								$('.airplane').removeClass('right-direction');
+								$('.airplane').addClass('down-direction');
+								$('.airplane').addClass('move');
+								_moveClear = setTimeout(function(){$('.airplane').removeClass('move');},400);
+								clearInterval(moveTimer);
+								layerPop(currentPos,"arrive");	
+								//골
+							}else{
+								$('.airplane').removeClass('move');								
+							}							
+							if(_num > 0){
+								imgChange(currentPos,"_on");
+							}else{								
+								imgChange(currentPos+1,"_off")
+							}							
+						});					
+				}else{
+					clearInterval(moveTimer);
+					if(currentPos == 3){//+3칸					
+						layerPop(currentPos,"arrive");				
+					}else if(currentPos == 7){//인천공항 : 한번에 이동						
+						$('.airplane').removeClass('down-direction');
+						$('.airplane').addClass('left-down-direction');
+						$('.airplane').addClass('move');						
+						_moveClear = setTimeout(function(){$('.airplane').removeClass('move');airplaneMove("pass");},400);
+					}else if(currentPos == 15){
+						$('.square').each(function(index){
+							if(index > 7 && index < 16){
+								imgChange(index,"_on");
+							}
+						});
+						$('.airplane').removeClass('left-down-direction');
+						$('.airplane').removeClass('left-direction');
+						$('.airplane').addClass('right-direction');
+						$('.airplane').addClass('move');
+						_moveClear = setTimeout(function(){$('.airplane').removeClass('move');},400);
+						layerPop(currentPos,"arrive");
+					}else if(currentPos == 17){//-2칸
+						layerPop(currentPos,"arrive");						
+					}else if(currentPos == 18){
+						layerPop(currentPos,"arrive");
+					}else{
+						//도착함 레이어 팝업 띄움
+						//console.log("도착함 레이어 팝업 띄움");
+						layerPop(currentPos,"arrive");					
+					}					
+				}				
+			},1000);
+		}
+		//비행기 이동시 판변경
+		function imgChange(_pos,_state){				
+			if(_state == '_on'){
+				$('.square').eq(_pos).find('img').attr('src',$('.square').eq(_pos).find('img').attr('src').replace("_off",_state));
+			}else{
+				$('.square').eq(_pos).find('img').attr('src',$('.square').eq(_pos).find('img').attr('src').replace("_on",_state));
+			}					
+		}
+		//취항지 팝업
+		var giftStep = 1;
+		var giftNum = 1; //선물 number에 따라 이미지 
+		function layerPop(_num,_state){				
+			var _eventTimer;//레이어팝업 뜨는 애니메이션 후 클릭 이벤트를 부여하기 위해 정의
+			if(_num == 7){
+				_num = 15;
+			}
+			//_state 가 click이면 클릭 +3 -2 경품 은 작동x, 첫번째 인천 공항은 작동o			
+			if($('.square').eq(_num).hasClass('has-spot')){						
+				squareRemoveEvent();//팝업 뜰때 말판 클릭이벤트 remove
+				rollRemoveEvent();
+				$('.layer-pop img').eq(0).attr('src',"img/spot_pop"+_num+".png");	
+				$('.layer-pop').removeClass('off');
+				$('.layer-pop').show();
+				$('.layer-pop').addClass('on');	
+				
+				_eventTimer = setTimeout(function(){
+					$('.layer-pop').on('click',function(e){										
+						$('.layer-pop').off('click');
+						$('.layer-pop').removeClass('on');
+						$('.layer-pop').addClass('off').delay(600).fadeOut(50,function(){squareAddEvent();clearTimeout(_eventTimer);});
+						isStepComplete = true;
+						rollAddEvent();						
+					});
+				},600);
+			}else if($('.square').eq(_num).hasClass('has-gift') && _state != "click"){ //========================================================경품 팝업은 주사위 굴려 도착했을때만 
+				squareRemoveEvent();//팝업 뜰때 말판 클릭이벤트 remove
+				rollRemoveEvent();			
+				$('.layer-pop img').eq(0).attr('src','img/gift_close.png');					
+				$('.layer-pop').removeClass('off');
+				$('.layer-pop').show();
+				$('.layer-pop').addClass('on');				
+				_eventTimer = setTimeout(function(){
+					$('.layer-pop').on('click',function(e){
+						e.preventDefault();
+						if(giftStep == 1){
+							giftStep = 2;
+							$('.layer-pop img').eq(0).attr('src',"img/gift_open"+giftNum+".png");	
+							$('.layer-pop').removeClass('off');
+							$('.layer-pop').show();
+							$('.layer-pop').addClass('on');	
+							$('.layer-pop .ok-btn').show();								
+							layerPopCloseAddEvent();						
+						}else{
+							console.log("여기도 이벤트가?");
+							giftStep = 1;							
+							$('.layer-pop').off('click');
+							clearTimeout(_eventTimer);												
+						}
+						clearTimeout(_eventTimer);//시간 안에 클릭이 될경우 타이머 해제
+						isStepComplete = true;								
+					});
+				},500);
+			}else if($('.square').eq(_num).hasClass('has-goal') && _state != "click"){ //=====================================================goal 팝업은 주사위 굴려 도착했을때만
+				squareRemoveEvent();//팝업 뜰때 말판 클릭이벤트 remove
+				rollRemoveEvent();
+				$('.layer-pop img').eq(0).attr('src',"img/goal_pop.png");					
+				$('.layer-pop').removeClass('off');
+				$('.layer-pop').show();
+				$('.layer-pop').addClass('on');	
+				$('.layer-pop .ok-btn').show();					
+				layerPopCloseAddEvent();
+				isGoal = true;
+			}else if($('.square').eq(_num).hasClass('has-friend') && _state != "click"){ //==================================================친구 팝업은 주사위 굴려 도착했을때만
+				//console.log("도와줘 친구야");
+				squareRemoveEvent();//팝업 뜰때 말판 클릭이벤트 remove
+				rollRemoveEvent();
+				//팔로우 팝업창 보이기
+				$('.follow-pop a img').attr('src','img/friend_pop1.png')
+				$('.follow-pop').show()
+				squareAddEvent(); 
+				rollAddEvent();
+				isStepComplete = true;				
+			}else if(_num == 3 && _state != "click"){//=====================================================================================+3팝업
+				squareRemoveEvent();//팝업 뜰때 말판 클릭이벤트 remove
+				rollRemoveEvent();
+				$('.layer-pop img').eq(0).attr('src',"img/dice_plus.png");				
+				$('.layer-pop').removeClass('off');
+				$('.layer-pop').show();
+				$('.layer-pop').addClass('on');	
+			
+				_eventTimer = setTimeout(function(){				
+					$('.layer-pop').removeClass('on');
+					$('.layer-pop').addClass('off').delay(600).fadeOut(50,function(){squareAddEvent(); rollAddEvent();clearTimeout(_eventTimer);});
+					isStepComplete = true;
+					completeTimer = setTimeout(function(){airplaneMove(3);},400);//비행기 움직임 완료후 다시 실행해야하므로 애니메이션 타임보다길게	
+				},600);	
+			}else if(_num == 17 && _state != "click"){//==========================================================================================================-2팝업
+				squareRemoveEvent();//팝업 뜰때 말판 클릭이벤트 remove
+				rollRemoveEvent();
+				$('.layer-pop img').eq(0).attr('src',"img/dice_minus.png");				
+				$('.layer-pop').removeClass('off');
+				$('.layer-pop').show();
+				$('.layer-pop').addClass('on');					
+				_eventTimer = setTimeout(function(){				
+					$('.layer-pop').removeClass('on');
+					$('.layer-pop').addClass('off').delay(600).fadeOut(50,function(){squareAddEvent(); rollAddEvent();clearTimeout(_eventTimer);});
+					isStepComplete = true;					
+					completeTimer = setTimeout(function(){airplaneMove(-2);},600);	//비행기 움직임 완료후 다시 실행해야하므로 애니메이션 타임보다길게						
+					$('.airplane').removeClass('right-direction');												
+					$('.airplane').addClass('left-direction');
+					$('.airplane').addClass('move');											
+					_moveClear = setTimeout(function(){$('.airplane').removeClass('move');},600);	
+				},600);		
+			}
+		}				
+		//주사위 애니메이션
+		function diceAni(){			
+			squareRemoveEvent();
+			var currentFps = 35;
+			var animationSettings = {
+				fps: currentFps,
+				loop: false,
+				autoplay: false,
+				animations: {
+					diceAniStart: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52]											
+				},
+				complete: function(){
+					// this will be called when
+					// there is no loop and the
+					// animation finishes	
+					diceComoplete();
+					$('.dice-container').removeClass('scale');						
+				}
+			};
+			$('.dice').animateSprite(animationSettings);
+			var goStart = function(){							
+				$('.dice-container').addClass('scale');				
+				$('.dice').animateSprite('restart', 'diceAniStart');			
+			}					
+			var diceComoplete = function(){									
+				if(diceNum == 1){
+					$('.dice').animateSprite('frame', 26);//1
+				}else if(diceNum == 2){
+					$('.dice').animateSprite('frame', 30);//2
+				}else if(diceNum == 3){
+					$('.dice').animateSprite('frame', 16);//3	
+				}else if(diceNum == 4){
+					$('.dice').animateSprite('frame', 52);//4
+				}else if(diceNum == 5){
+					$('.dice').animateSprite('frame', 38);//5
+				}else if(diceNum == 6){
+					$('.dice').animateSprite('frame', 34);//6
+				}				
+				$('.roll-btn img').attr('src',"img/roll_btn"+diceNum+".png")
+				if(isFriend){
+					$('.dice-container .text').show();
+					$('.dice-container .text span').text(diceNum);
+				}
+				//주사위 애니메이션 완료후 몇초후 레이어 팝업 안보이게
+				var dicePlaneOff = setTimeout(function(){												
+						$('.dice-panel').removeClass('on');
+						$('.dice-panel').addClass('off').delay(1200).fadeOut(100);
+						$('.dice-container .text').hide();
+						airplaneMove(diceNum);//비행기 이동 함수 호출
+						squareAddEvent();
+					},2000);
+			}
+			goStart();
+		}
+		//활성화 함수
+		function activeSetting(_num){
+			$('.airplane').css({'top':directionArr[_num][0],'left':directionArr[_num][1]});
+			currentPos = _num;
+			$('.square').each(function(index){
+				if(index <= currentPos){
+					imgChange(index,"_on");
+				}
+			});
+			if(currentPos == 0){
+				//$('.airplane').addClass('down-direction');	
+			}else if(currentPos < 6){
+				$('.airplane').removeClass('down-direction')
+				$('.airplane').addClass('right-direction');
+			}else if(currentPos < 8){
+				$('.airplane').removeClass('right-direction')
+				$('.airplane').addClass('down-direction');
+			}else if(currentPos < 13){						
+				$('.airplane').addClass('left-direction');					
+			}else if(currentPos < 15){													
+				$('.airplane').addClass('down-direction');
+				_moveClear = setTimeout(function(){$('.airplane').removeClass('move');},400);
+			}else if(currentPos < 20){
+				$('.airplane').removeClass('left-down-direction');
+				$('.airplane').removeClass('down-direction');
+				$('.airplane').addClass('right-direction');					
+			}else if(currentPos == 20){
+				$('.airplane').removeClass('right-direction');
+				$('.airplane').addClass('down-direction');
+			}
+		}
+	</script>
+</body>
+</html>

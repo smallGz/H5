@@ -1,0 +1,584 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  outline: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  height: 101%;
+}
+body {
+  line-height: 1;
+  font-family: "微软雅黑", Arial, Tahoma, sans-serif;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+strong {
+  font-weight: bold;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+img {
+  border: 0;
+  max-width: 100%;
+}
+a,
+a:hover {
+  text-decoration: none;
+}
+/*去除高亮*/
+a,
+input {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-appearance: none;
+  outline: none;
+}
+.mgT {
+  margin-top: 0.3rem;
+}
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #8fd6c1;
+  position: relative;
+  color: #515151;
+}
+#wrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: auto;
+  background: url(../images/bg.jpg) no-repeat;
+  background-size: cover;
+}
+.column-index {
+  position: relative;
+  height: 100%;
+}
+.column-index .tle {
+  width: 10.925rem;
+  height: 5.2rem;
+  background: url(../images/title.png) no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 2rem;
+  left: 2.5rem;
+}
+.column-index .plane {
+  width: 3.125rem;
+  height: 1.325rem;
+  background: url(../images/plane.png) no-repeat;
+  background-size: cover;
+  position: absolute;
+  right: 0.25rem;
+  top: 0.875rem;
+}
+.column-index .c-i-main {
+  width: 100%;
+  height: 17.975rem;
+  background: url(../images/main_bg.png) no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.column-index a.btn-start {
+  width: 7.75rem;
+  height: 3.975rem;
+  background: url(../images/btn.png) no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: 6rem;
+  top: 12.8rem;
+  text-indent: -9999px;
+}
+.column-index a.btn-tip {
+  width: 1.575rem;
+  height: 3.825rem;
+  background: url(../images/txt-btn.png) no-repeat;
+  background-size: cover;
+  position: absolute;
+  right: 0.325rem;
+  top: 2.1rem;
+  text-indent: -9999px;
+}
+.popup {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../images/alpha.png) repeat;
+  overflow: auto;
+}
+.close {
+  width: 1rem;
+  height: 1rem;
+  background: url(../images/close.png) no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.div-tip {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14.5rem;
+  height: 32.75rem;
+  margin-left: -7.25rem;
+  top: 0.75rem;
+  margin-bottom: 0.75rem;
+  background: url(../images/prize-bg.png) no-repeat;
+  background-size: cover;
+}
+.div-tip .prize dt {
+  padding: 1.375rem 0 0.875rem 0;
+}
+.div-tip .tle-1 {
+  width: 2.1rem;
+  height: 0.75rem;
+  margin: 0 auto;
+}
+.div-tip .tle-3 {
+  width: 3.05rem;
+  height: 0.75rem;
+  margin: 0 auto;
+}
+.div-tip .tle-1 img,
+.div-tip .img-1 img,
+.div-tip .tle-3 img {
+  width: 100%;
+  height: 100%;
+}
+.div-tip .infor {
+  font-size: 0.7rem;
+  padding-bottom: 0.75rem;
+  text-align: center;
+  line-height: 1rem;
+}
+.div-tip .img-1 {
+  width: 11.2rem;
+  height: 3.925rem;
+  margin: 0 auto;
+}
+.div-tip .img-2 {
+  width: 13.2rem;
+  height: 5.325rem;
+  margin: 0 auto;
+}
+.div-tip .tips_infor {
+  width: 13.5rem;
+  margin: 0 auto;
+  font-size: 0.7rem;
+  line-height: 1rem;
+}
+.div-tip .tips_infor span,
+.div-tip .tips_infor em {
+  display: inline-block;
+}
+.div-tip .tips_infor em {
+  width: 1.1rem;
+  vertical-align: top;
+  color: #00529b;
+}
+.div-tip .tips_infor span {
+  width: 11.7rem;
+}
+.btn-bg {
+  width: 7.625rem;
+  height: 2.15rem;
+  background: url(../images/btn-tuodan.png) no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 2.15rem;
+  display: block;
+  color: #FFF;
+}
+.div-start {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14.575rem;
+  height: 19.4rem;
+  margin-left: -7.2875rem;
+  margin-top: -9.7rem;
+  background: url(../images/start-test-bg.png) no-repeat;
+  background-size: cover;
+  padding: 1.9rem 0 0 0.55rem;
+}
+.div-start h4 {
+  text-align: center;
+  font-size: 0.8rem;
+  padding-bottom: 1rem;
+}
+.div-start dl.gender-div {
+  overflow: hidden;
+  height: 1%;
+}
+.div-start dl.gender-div dd {
+  width: 6.5rem;
+  height: 6.875rem;
+  float: left;
+  background: #FFF;
+  padding: 0.25rem;
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.15);
+}
+.div-start dl.gender-div dd:nth-child(1) {
+  margin-right: 0.425rem;
+}
+.div-start input[type="radio"] {
+  display: none;
+}
+.div-start span.gender-img,
+.div-start em.gender-name {
+  display: block;
+}
+.div-start span.gender-img {
+  width: 6rem;
+  height: 5.35rem;
+}
+.div-start em.gender-name {
+  text-align: center;
+  padding-top: 0.375rem;
+  font-size: 0.55rem;
+}
+.div-start input:checked + span.gender-img {
+  border: 5px solid #008bbf;
+}
+.div-start span.gender-img img {
+  width: 100%;
+  height: 100%;
+}
+.div-start dl.bloodType-div {
+  margin-top: 1rem;
+  overflow: hidden;
+  height: 1%;
+}
+.div-start dl.bloodType-div dd {
+  width: 3.325rem;
+  height: 2.875rem;
+  float: left;
+  margin-right: 0.1rem;
+}
+.div-start span.bloodType-img {
+  width: 3.325rem;
+  height: 2.875rem;
+  background: url(../images/bloodtype.png) no-repeat;
+  display: block;
+  color: #FFF;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-align: center;
+  line-height: 2.875rem;
+  background-size: cover;
+}
+.div-start input:checked + span.bloodType-img {
+  background: url(../images/bloodtype_cur.png) no-repeat;
+  background-size: cover;
+}
+.div-start .btn-tuodan {
+  margin-top: 0.75rem;
+}
+.view-infor {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14.5rem;
+  height: 23.675rem;
+  margin-left: -7.25rem;
+  margin-top: -11.8375rem;
+  background: url(../images/view-infor-bg.png) no-repeat;
+  background-size: cover;
+}
+.view-infor .plane-2 {
+  width: 3.2rem;
+  height: 1.4rem;
+  background: url(../images/plane-2.png) no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 14.825rem;
+  left: -0.5rem;
+}
+.view-infor .plane-3 {
+  width: 3.675rem;
+  height: 2.225rem;
+  background: url(../images/plane-3.png) no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 11.2rem;
+  right: -0.75rem;
+}
+.view-infor .view-tle {
+  width: 11.25rem;
+  height: 3.625rem;
+  position: relative;
+  margin: 1rem auto 0;
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 1.25rem;
+}
+.view-infor .view-tle span {
+  color: #00529b;
+}
+.view-infor .view-tle em {
+  width: 1.875rem;
+  height: 1.225rem;
+  background: url(../images/1111.png) no-repeat;
+  background-size: cover;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.view-infor .view-img {
+  width: 7.5rem;
+  height: 7.075rem;
+  position: relative;
+  margin-left: 3.125rem;
+  padding-left: 1.25rem;
+}
+.view-infor .view-img .icon-heart {
+  width: 1.75rem;
+  height: 2.3rem;
+  background: url(../images/icon-1.png) no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.view-infor .view-img .view-img-div {
+  width: 5.8rem;
+  height: 6.45rem;
+  box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 0.15);
+  background: #FFF;
+  padding: 0.3rem;
+}
+.view-infor .view-img span {
+  width: 5.125rem;
+  height: 5.125rem;
+  display: block;
+}
+.view-infor .view-img span img {
+  width: 100%;
+  height: 100%;
+}
+.view-infor .view-img h4 {
+  font-size: 0.55rem;
+  text-align: center;
+  padding-top: 0.25rem;
+}
+.view-infor .view-date {
+  width: 12rem;
+  height: 3.15rem;
+  background: url(../images/data-bg.png) no-repeat;
+  background-size: cover;
+  margin: 0.325rem auto 0;
+  font-size: 0.8rem;
+  color: #00529b;
+  text-align: center;
+  line-height: 1.25rem;
+}
+.view-infor .view-date span {
+  font-size: 1.05rem;
+  color: #00a3c5;
+}
+.view-infor .view-tip {
+  font-size: 0.7rem;
+  text-align: center;
+  line-height: 1rem;
+  padding-top: 1rem;
+}
+.view-infor .view-tip .btn-close {
+  margin-top: 0.5rem;
+}
+.to-WeChat {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14.5rem;
+  height: 23.675rem;
+  margin-left: -7.25rem;
+  margin-top: -11.8375rem;
+  background: url(../images/view-infor-bg.png) no-repeat;
+  background-size: cover;
+}
+.to-WeChat .tle {
+  width: 10.925rem;
+  height: 5.2rem;
+  background: url(../images/title.png) no-repeat;
+  background-size: cover;
+  margin: 2.1rem auto 0;
+}
+.to-WeChat .plane-2 {
+  width: 3.2rem;
+  height: 1.4rem;
+  background: url(../images/plane-2.png) no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 13.15rem;
+  left: -0.5rem;
+}
+.to-WeChat .plane-3 {
+  width: 3.675rem;
+  height: 2.225rem;
+  background: url(../images/plane-3.png) no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 7.65rem;
+  right: -0.75rem;
+}
+.to-WeChat .btn-date {
+  border-radius: 10px;
+  background-color: #00a3c5;
+  width: 6.7rem;
+  height: 1.05rem;
+  line-height: 1.05rem;
+  color: #FFF;
+  font-size: 0.65rem;
+  text-align: center;
+  margin: 0.25rem auto 0;
+}
+.to-WeChat .to-infor {
+  font-size: 0.8rem;
+  line-height: 1.25rem;
+  text-align: center;
+  padding: 1.25rem 0 0.75rem;
+}
+.to-WeChat .to-infor span {
+  color: #00a3c5;
+}
+.to-WeChat .sm {
+  width: 7.4rem;
+  height: 7.4rem;
+  margin: 0 auto;
+}
+.to-WeChat .sm img {
+  width: 100%;
+  height: 100%;
+}
+.div-tip,
+.div-start,
+.view-infor,
+.popup,
+.to-WeChat {
+  display: none;
+}

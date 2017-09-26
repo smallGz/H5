@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html id="html">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+<title>大韩航空的脱单测试 解救 单身汪!</title> 
+<link rel="stylesheet" href="css/infor.css">
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.eraser.js"></script>
+<script type="text/javascript" src="js/infor.js"></script>
+</head>
+<body>
+<div class="wrap-infor">
+  <div class="date-column">
+      <dl class="user-infor">
+        <dt><span class="user-img"><img src="images/img-1.png" alt=""></span></dt>
+        <dd class="user-name"><em>“李贤智”</em><br>成功脱单的日期是..?</dd>
+      </dl>
+      <dl class="forecast">
+        <dd class="fore-img"><span><img src="images/user-img-1.jpg" alt=""></span></dd>
+        <dd class="fore-date"><span>万年以后</span></dd>
+        <dd class="fore-cnt">“蓝瘦，香菇 〒_〒 <br>
+真爱，下辈子再见！<br>
+给可怜的单身汪一份礼物, 疗疗伤！”</dd>
+        <dd class="fore-prize"><span><img src="images/user-img.png" alt=""></span></dd>
+        <dd class="fore-btn"><a href="javascript:;" class="btn-bg">我也要测试</a></dd>
+      </dl>
+      <div class="plane-2"></div>
+      <div class="plane-3"></div>
+  </div>
+  <div class="eraser"><img id="redux" src="images/canvas-bg_02.jpg" /></div>
+  <div class="prompt" id="div-earser">
+    <div class="promptIn">
+      <h4>大韩航空的脱单测试<br><span>“李贤智”</span>成功脱单的日期是..?</h4>
+      <p>擦屏幕看我的<br>脱单日期 !</p>
+      <a href="javascript:;" class="btn-bg" id="btn-earser">确认</a>
+    </div>
+  </div>
+  <script type = "text/javascript">
+      $(function(){
+         $('#redux').eraser({
+          progressFunction: function(p) {
+            var iPersent = Math.round(p*100);
+            if(iPersent>=60){
+              $('#redux').hide();
+            }
+          }
+        });
+     
+     });
+
+    </script>
+</div>
+</body>
+</html>

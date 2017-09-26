@@ -1,0 +1,350 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  outline: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  height: 101%;
+}
+body {
+  line-height: 1;
+  font-family: "微软雅黑", Arial, Tahoma, sans-serif;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+strong {
+  font-weight: bold;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+img {
+  border: 0;
+  max-width: 100%;
+}
+a,
+a:hover {
+  text-decoration: none;
+}
+/*去除高亮*/
+a,
+input {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-appearance: none;
+  outline: none;
+}
+.mgT {
+  margin-top: 0.3rem;
+}
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #00a3c5;
+  position: relative;
+  color: #515151;
+}
+#wrap-infor {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: auto;
+}
+.date-column {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14.5rem;
+  height: 23.675rem;
+  margin-left: -7.25rem;
+  margin-top: -11.8375rem;
+  background: url(../images/view-infor-bg.png) no-repeat;
+  background-size: cover;
+}
+.user-infor {
+  margin: 0.75rem 0 0 0.75rem;
+  overflow: hidden;
+}
+.user-infor dt,
+.user-infor dd {
+  float: left;
+}
+.user-infor dt {
+  width: 2.925rem;
+  height: 3.375rem;
+  background: url(../images/infor-img.png) no-repeat;
+  background-size: cover;
+  padding: 0.175rem;
+}
+.user-infor dd {
+  padding: 0.625rem 0 0 0.8rem;
+  font-weight: bold;
+}
+.user-infor span.user-img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.user-infor span.user-img img {
+  width: 100%;
+  height: 100%;
+}
+.user-infor .user-name {
+  font-size: 0.8rem;
+  line-height: 1.25rem;
+}
+.user-infor .user-name em {
+  color: #00529b;
+}
+.fore-img {
+  padding: 0.25rem 0;
+}
+.fore-img span {
+  width: 10.35rem;
+  height: 7.5rem;
+  display: block;
+  margin: 0 auto;
+  border: 2px solid #00a3c5;
+}
+.fore-img span img {
+  width: 100%;
+  height: 100%;
+}
+.fore-date {
+  padding-bottom: 0.25rem;
+}
+.fore-date span {
+  width: 12rem;
+  height: 1.275rem;
+  background: url(../images/data-bg-2.png) no-repeat;
+  background-size: cover;
+  font-size: 1.05rem;
+  line-height: 1.275rem;
+  color: #00a3c5;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
+.fore-cnt {
+  text-align: center;
+  font-size: 0.7rem;
+  line-height: 1rem;
+}
+.fore-prize {
+  padding-top: 0.75rem;
+}
+.fore-prize span {
+  width: 7.5rem;
+  height: 3.025rem;
+  display: block;
+  margin: 0 auto;
+}
+.fore-prize span img {
+  width: 100%;
+  height: 100%;
+}
+.fore-btn {
+  padding-top: 0.25rem;
+}
+.fore-btn .btn-bg {
+  width: 7.625rem;
+  height: 2.15rem;
+  background: url(../images/btn-tuodan.png) no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 2.15rem;
+  display: block;
+  color: #FFF;
+}
+.plane-2 {
+  width: 3.2rem;
+  height: 1.4rem;
+  background: url(../images/plane-2.png) no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 11.225rem;
+  left: -0.5rem;
+}
+.plane-3 {
+  width: 3.675rem;
+  height: 2.225rem;
+  background: url(../images/plane-3.png) no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 6.7rem;
+  right: -0.75rem;
+}
+.eraser {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+.prompt {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #00a3c5;
+}
+.prompt .promptIn {
+  width: 12rem;
+  height: 9rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -4.5rem;
+  margin-left: -6rem;
+}
+.prompt h4 {
+  font-size: 0.8rem;
+  color: #FFF;
+  line-height: 1rem;
+  text-align: center;
+}
+.prompt h4 span {
+  color: #00529b;
+}
+.prompt h4 em {
+  width: 1.875rem;
+  height: 1.225rem;
+  background: url(../images/1111.png) no-repeat;
+  background-size: cover;
+  display: block;
+}
+.prompt p {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  color: #FFF;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+.prompt .btn-bg {
+  width: 7.625rem;
+  height: 2.15rem;
+  background: url(../images/btn-tuodan.png) no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 2.15rem;
+  display: block;
+  color: #FFF;
+}

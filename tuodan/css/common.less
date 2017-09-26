@@ -1,0 +1,115 @@
+@rem: 40rem;
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+margin: 0;padding: 0;border: 0;font-size: 100%;font: inherit;vertical-align: baseline;outline: none;-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;box-sizing: border-box;}
+html {height: 101%;}
+body {line-height: 1;font-family:"微软雅黑", Arial, Tahoma, sans-serif;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after, q:before, q:after {content: '';  content: none;}
+strong {font-weight: bold;}
+table {border-collapse: collapse;border-spacing: 0;}
+img {border: 0;max-width: 100%;}
+a,a:hover{text-decoration: none;}
+// .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+// .clearfix{*+height:1%;}
+/*去除高亮*/
+a,input {-webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-appearance: none; outline: none;}
+.mgT{margin-top:0.3rem;}
+body{width: 100%; height: 100%;overflow: hidden; background: #8fd6c1; position: relative;color: #515151}
+
+#wrap{width: 100%; height: 100%; position: relative;overflow: auto;background: url(../images/bg.jpg) no-repeat; background-size: cover;}
+
+  
+// .index-bg{ background: url(../images/bg.jpg) no-repeat; background-size: cover;height: 1008/@rem;}
+.column-index{ position: relative;height: 100%;
+  .tle{width: 437/@rem;height: 208/@rem; background: url(../images/title.png) no-repeat; background-size: cover; position: absolute;top: 80/@rem; left: 100/@rem;}
+  .plane{width: 125/@rem;height: 53/@rem; background: url(../images/plane.png) no-repeat;  background-size: cover; position: absolute;right: 10/@rem;top:35/@rem;}
+  .c-i-main{width: 100%;height: 719/@rem; background: url(../images/main_bg.png) no-repeat; background-size: cover;position: absolute;left: 0; bottom: 0}
+  a.btn-start{width: 310/@rem;height: 159/@rem; background: url(../images/btn.png) no-repeat; background-size: cover; position: absolute;left: 240/@rem;top: 512/@rem; text-indent: -9999px;}
+  a.btn-tip{width: 63/@rem;height: 153/@rem; background: url(../images/txt-btn.png) no-repeat; background-size: cover; position: absolute;right: 13/@rem;top: 84/@rem; text-indent: -9999px;}
+
+}
+
+//popup
+.popup{width: 100%; height: 100%; position: absolute;top: 0; left: 0; background: url(../images/alpha.png) repeat; overflow: auto;}
+
+.close{width: 40/@rem;height: 40/@rem; background: url(../images/close.png) no-repeat; background-size: cover; position: absolute;top: 0;right: 0;}
+.div-tip{position: absolute; top: 50%; left: 50%;width: 580/@rem;height: 1310/@rem;margin-left:-580/2/@rem;top:30/@rem;margin-bottom:30/@rem;background: url(../images/prize-bg.png) no-repeat; background-size: cover;
+.prize dt{padding: 55/@rem 0 35/@rem 0}
+.tle-1{width: 84/@rem;height: 30/@rem;margin:0 auto;}
+.tle-3{width: 122/@rem;height: 30/@rem;margin:0 auto;}
+.tle-1 img,.img-1 img,.tle-3 img{width: 100%;height: 100%;}
+.infor{font-size: 28/@rem;padding-bottom: 30/@rem; text-align: center; line-height: 40/@rem;}
+.img-1{width: 448/@rem;height: 157/@rem;margin:0 auto;}
+.img-2{width: 528/@rem;height: 213/@rem;margin:0 auto;}
+.tips_infor{width: 540/@rem; margin:0 auto;font-size: 28/@rem; line-height: 40/@rem;
+  span,em{display: inline-block;}
+  em{width:44/@rem;vertical-align: top; color: #00529b}
+  span{width: 468/@rem;}
+	}
+}
+.btn-bg{width: 305/@rem;height: 86/@rem;background: url(../images/btn-tuodan.png) no-repeat; background-size: cover; margin:0 auto; text-align: center;font-size: 36/@rem; line-height: 86/@rem;display: block;color: #FFF;}
+.div-start{position: absolute; top: 50%; left: 50%;width: 583/@rem;height: 776/@rem;margin-left:-583/2/@rem;margin-top:-776/2/@rem;background: url(../images/start-test-bg.png) no-repeat; background-size: cover;padding: 76/@rem 0 0 22/@rem;
+	h4{text-align: center; font-size: 32/@rem;padding-bottom: 40/@rem;}
+	dl.gender-div{overflow: hidden;height: 1%;
+		dd{width: 260/@rem;height: 275/@rem; float: left; background: #FFF;padding: 10/@rem;box-shadow:3px 3px 0px 0px rgba(0, 0, 0, 0.15);}
+		dd:nth-child(1){margin-right: 17/@rem;}
+	}
+	input[type="radio"]{display: none;}
+	span.gender-img,em.gender-name{display: block;}
+	span.gender-img{width: 240/@rem;height: 214/@rem;}
+	em.gender-name{ text-align: center; padding-top: 15/@rem;font-size: 22/@rem;}
+	input:checked+span.gender-img { border:5px solid #008bbf}
+	span.gender-img img{width: 100%;height: 100%}
+	dl.bloodType-div{margin-top:40/@rem;overflow: hidden;height: 1%;
+		dd{width: 133/@rem; height: 115/@rem; float: left;margin-right: 4/@rem;}
+	}
+	span.bloodType-img{width: 133/@rem; height: 115/@rem; background: url(../images/bloodtype.png) no-repeat;display: block;color: #FFF; font-weight: bold; font-size: 36/@rem; text-align: center;line-height: 115/@rem; background-size: cover;}
+	input:checked+span.bloodType-img { background: url(../images/bloodtype_cur.png) no-repeat; background-size: cover;}
+	.btn-tuodan{margin-top: 30/@rem;}
+	
+
+
+}
+.view-infor{position: absolute; top: 50%; left: 50%;width: 580/@rem;height: 947/@rem;margin-left:-580/2/@rem;margin-top:-947/2/@rem;background: url(../images/view-infor-bg.png) no-repeat; background-size: cover;
+	.plane-2{width:128/@rem;height:56/@rem;background: url(../images/plane-2.png) no-repeat; background-size: cover; position: absolute;top: 593/@rem; left: -20/@rem}
+	.plane-3{width:147/@rem;height:89/@rem;background: url(../images/plane-3.png) no-repeat; background-size: cover; position: absolute;top: 448/@rem; right: -30/@rem}
+	dl{}
+	.view-tle{width: 450/@rem;height: 145/@rem; position: relative;margin:40/@rem auto 0;padding-top:40/@rem; text-align: center;font-size: 32/@rem;line-height: 50/@rem;
+		span{color: #00529b}
+		em{width: 75/@rem;height: 49/@rem; background: url(../images/1111.png) no-repeat; background-size: cover; display: block;position: absolute;top: 0; left: 0}
+	}
+	.view-img{width: 300/@rem;height: 283/@rem; position:relative;margin-left: 125/@rem;padding-left: 50/@rem;
+		.icon-heart{width: 70/@rem;height: 92/@rem;background: url(../images/icon-1.png) no-repeat; background-size: cover; position: absolute;left: 0; bottom: 0;}
+		.view-img-div{width: 232/@rem;height: 258/@rem;box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 0.15);background: #FFF;padding: 12/@rem;}
+		span{width: 205/@rem;height: 205/@rem; display: block;}
+		span img{width: 100%;height: 100%;}
+		h4{font-size: 22/@rem; text-align: center;padding-top: 10/@rem;}
+	}
+	.view-date{width: 480/@rem;height: 126/@rem;background: url(../images/data-bg.png) no-repeat; background-size: cover;margin:13/@rem auto 0;font-size: 32/@rem;color: #00529b;text-align: center; line-height: 50/@rem;
+		span{font-size: 42/@rem;color: #00a3c5; }
+	}
+	.view-tip{font-size: 28/@rem; text-align: center;line-height: 40/@rem;padding-top: 40/@rem;
+	.btn-close{margin-top: 20/@rem;}
+	}
+
+
+}
+.to-WeChat{position: absolute; top: 50%; left: 50%;width: 580/@rem;height: 947/@rem;margin-left:-580/2/@rem;margin-top:-947/2/@rem;background: url(../images/view-infor-bg.png) no-repeat; background-size: cover;
+	.tle{width: 437/@rem;height: 208/@rem; background: url(../images/title.png) no-repeat; background-size: cover; margin:84/@rem auto 0;}
+	.plane-2{width:128/@rem;height:56/@rem;background: url(../images/plane-2.png) no-repeat; background-size: cover; position: absolute;top: 526/@rem; left: -20/@rem}
+	.plane-3{width:147/@rem;height:89/@rem;background: url(../images/plane-3.png) no-repeat; background-size: cover; position: absolute;top: 306/@rem; right: -30/@rem}
+	.btn-date {border-radius: 10px; background-color: rgb(0, 163, 197);width: 268/@rem;height: 42/@rem;line-height: 42/@rem;color: #FFF;font-size: 26/@rem; text-align: center;margin:10/@rem auto 0;}
+	.to-infor{font-size: 32/@rem; line-height: 50/@rem; text-align: center;padding: 50/@rem 0 30/@rem;
+		span{color: #00a3c5;}
+	}
+	.sm{width: 296/@rem; height: 296/@rem;margin:0 auto;
+		img{width: 100%;height: 100%}}
+
+
+}
+
+.div-tip,.div-start,.view-infor,.popup,.to-WeChat{display: none;}
+
